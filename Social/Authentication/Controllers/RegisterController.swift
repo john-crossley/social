@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RegisterController: UIViewController {
+class RegisterController: UIViewController, Coordinated {
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

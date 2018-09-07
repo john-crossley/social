@@ -19,14 +19,22 @@ class MainCoordinator: Coordinator {
 
     init(root: Root) {
         var controller = MainCoordinator.rootController(for: root)
-        navigationController = controller.embedNavController()
+        navigationController = UINavigationController(rootViewController: controller)
         controller.coordinator = self
+    }
+
+    func register() {
+        present {
+            return RegisterController()
+        }
     }
 
     private static func rootController(for root: Root) -> CoordinatedViewController {
         switch root {
-        case .authentication: return AuthController()
-        case .home: return HomeController()
+        case .authentication:
+            return AuthController()
+        case .home:
+            return HomeController()
         }
     }
 

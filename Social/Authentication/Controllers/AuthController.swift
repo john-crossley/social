@@ -31,6 +31,6 @@ class AuthController: UIViewController, Coordinated {
     }
 
     @IBAction func didTapRegister(sender: SocialButton) {
-        navigationController?.pushViewController(RegisterController(), animated: true)
+        coordinator?.register()
     }
 }
