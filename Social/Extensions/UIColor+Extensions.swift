@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    static let accentColor: UIColor = UIColor(red: 0.72, green: 0.19, blue: 0.18, alpha: 1.00)
+    static let accentColor: UIColor = UIColor(named: "accentColor") ?? .red
 }

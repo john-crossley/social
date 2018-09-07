@@ -7,6 +7,8 @@ target 'Social' do
 
   # Pods for Social
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'GyozaKit'
 
   target 'SocialTests' do
     inherit! :search_paths

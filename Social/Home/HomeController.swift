@@ -14,6 +14,8 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Home"
+
+        present(AuthController().embedNavController(), animated: true, completion: nil)
     }
 
 }

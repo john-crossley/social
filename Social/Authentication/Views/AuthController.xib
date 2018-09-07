@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthController" customModule="Social" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="v7Q-90-eX6" id="gp4-gp-D7J"/>
+                <outlet property="view" destination="RgS-Qk-o2F" id="YOo-DL-DbQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RgS-Qk-o2F">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sōsharu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7Q-90-eX6">
+                    <rect key="frame" x="16" y="100" width="343" height="36"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m8C-fc-qkI" userLabel="Action Buttons">
+                    <rect key="frame" x="16" y="295.5" width="343" height="96"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVP-xT-eZr">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                            <color key="backgroundColor" name="accentColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="TQH-GC-ae1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <state key="normal" title="Register">
+                                <color key="titleColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-Ep-IrC">
+                            <rect key="frame" x="0.0" y="52" width="343" height="44"/>
+                            <color key="backgroundColor" name="accentColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="rrj-8M-UpN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <state key="normal" title="Login">
+                                <color key="titleColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="v7Q-90-eX6" firstAttribute="top" secondItem="52n-6g-KFh" secondAttribute="top" constant="80" id="2jD-Ww-pCD"/>
+                <constraint firstItem="m8C-fc-qkI" firstAttribute="centerY" secondItem="52n-6g-KFh" secondAttribute="centerY" id="C7G-WI-Bk9"/>
+                <constraint firstItem="m8C-fc-qkI" firstAttribute="centerX" secondItem="52n-6g-KFh" secondAttribute="centerX" id="F6j-Ys-ZUy"/>
+                <constraint firstItem="52n-6g-KFh" firstAttribute="trailing" secondItem="m8C-fc-qkI" secondAttribute="trailing" constant="16" id="a4b-v3-uYz"/>
+                <constraint firstItem="v7Q-90-eX6" firstAttribute="leading" secondItem="52n-6g-KFh" secondAttribute="leading" constant="16" id="e8i-0j-pfe"/>
+                <constraint firstItem="52n-6g-KFh" firstAttribute="trailing" secondItem="v7Q-90-eX6" secondAttribute="trailing" constant="16" id="hC4-9n-qow"/>
+                <constraint firstItem="m8C-fc-qkI" firstAttribute="leading" secondItem="52n-6g-KFh" secondAttribute="leading" constant="16" id="i6a-im-XKz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="52n-6g-KFh"/>
+            <point key="canvasLocation" x="387" y="-10"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="accentColor">
+            <color red="0.71764705882352942" green="0.18823529411764706" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

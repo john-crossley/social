@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,7 +30,7 @@ fileprivate typealias CustomAppDelegate = AppDelegate
 extension CustomAppDelegate {
 
     private func setupFirebase() {
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
     }
 
     private func setupApp() {

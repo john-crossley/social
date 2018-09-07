@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F6E2142A9CA00CF221E /* AuthController.swift */; };
+		9A310F712142AA0100CF221E /* AuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A310F702142AA0100CF221E /* AuthController.xib */; };
+		9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F722142AF2B00CF221E /* UIViewController+Extensions.swift */; };
 		9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970982142A1EE00066E72 /* AppDelegate.swift */; };
 		9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A89709F2142A1EE00066E72 /* Assets.xcassets */; };
 		9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970A12142A1EE00066E72 /* LaunchScreen.storyboard */; };
@@ -46,6 +49,9 @@
 		59A51F2FC4E517264302976B /* Pods-SocialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTests/Pods-SocialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D4231B4B16A6314E18132C0 /* Pods_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890100942B1A334D590D1459 /* Pods_SocialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A310F6E2142A9CA00CF221E /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		9A310F702142AA0100CF221E /* AuthController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthController.xib; sourceTree = "<group>"; };
+		9A310F722142AF2B00CF221E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9A8970952142A1EE00066E72 /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8970982142A1EE00066E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A89709F2142A1EE00066E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +112,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9A310F6A2142A99500CF221E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F6D2142A9AD00CF221E /* Controllers */,
+				9A310F6C2142A9A600CF221E /* Views */,
+				9A310F6B2142A9A100CF221E /* Services */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		9A310F6B2142A9A100CF221E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9A310F6C2142A9A600CF221E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F702142AA0100CF221E /* AuthController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A310F6D2142A9AD00CF221E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F6E2142A9CA00CF221E /* AuthController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		9A89708C2142A1EE00066E72 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +170,7 @@
 		9A8970972142A1EE00066E72 /* Social */ = {
 			isa = PBXGroup;
 			children = (
+				9A310F6A2142A99500CF221E /* Authentication */,
 				9A8970D12142A59D00066E72 /* Resources */,
 				9A8970CC2142A42C00066E72 /* Extensions */,
 				9A8970C92142A3D300066E72 /* Utilities */,
@@ -181,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */,
+				9A310F722142AF2B00CF221E /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */,
+				9A310F712142AA0100CF221E /* AuthController.xib in Resources */,
 				9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */,
 				9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */,
 			);
@@ -395,12 +437,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Social/Pods-Social-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/GyozaKit/GyozaKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GyozaKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +463,9 @@
 			files = (
 				9A8970C82142A3A600066E72 /* HomeController.swift in Sources */,
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
+				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
 				9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */,
+				9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */,
 				9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
