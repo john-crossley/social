@@ -8,9 +8,12 @@
 
 import UIKit
 
-class AuthController: UIViewController {
+class AuthController: UIViewController, Coordinated {
+    weak var coordinator: MainCoordinator?
 
     @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var registerButton: SocialButton!
+    @IBOutlet private var loginButton: SocialButton!
 
     init() {
         super.init(nibName: "AuthController", bundle: .main)
@@ -22,8 +25,12 @@ class AuthController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
         titleLabel.textColor = .accentColor
+
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    @IBAction func didTapRegister(sender: SocialButton) {
+        navigationController?.pushViewController(RegisterController(), animated: true)
     }
 }

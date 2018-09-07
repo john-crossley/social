@@ -10,6 +10,11 @@
 		9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F6E2142A9CA00CF221E /* AuthController.swift */; };
 		9A310F712142AA0100CF221E /* AuthController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A310F702142AA0100CF221E /* AuthController.xib */; };
 		9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F722142AF2B00CF221E /* UIViewController+Extensions.swift */; };
+		9A310F762142B40900CF221E /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F752142B40900CF221E /* SocialButton.swift */; };
+		9A310F782142B87C00CF221E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F772142B87C00CF221E /* UIView+Extensions.swift */; };
+		9A310F7A2142BA9700CF221E /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F792142BA9700CF221E /* RegisterController.swift */; };
+		9A310F7D2142BBE000CF221E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F7C2142BBE000CF221E /* MainCoordinator.swift */; };
+		9A310F7F2142BBED00CF221E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F7E2142BBED00CF221E /* Coordinator.swift */; };
 		9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970982142A1EE00066E72 /* AppDelegate.swift */; };
 		9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A89709F2142A1EE00066E72 /* Assets.xcassets */; };
 		9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970A12142A1EE00066E72 /* LaunchScreen.storyboard */; };
@@ -52,6 +57,11 @@
 		9A310F6E2142A9CA00CF221E /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		9A310F702142AA0100CF221E /* AuthController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthController.xib; sourceTree = "<group>"; };
 		9A310F722142AF2B00CF221E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		9A310F752142B40900CF221E /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
+		9A310F772142B87C00CF221E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		9A310F792142BA9700CF221E /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		9A310F7C2142BBE000CF221E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9A310F7E2142BBED00CF221E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9A8970952142A1EE00066E72 /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8970982142A1EE00066E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A89709F2142A1EE00066E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,8 +151,26 @@
 			isa = PBXGroup;
 			children = (
 				9A310F6E2142A9CA00CF221E /* AuthController.swift */,
+				9A310F792142BA9700CF221E /* RegisterController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9A310F742142B3EC00CF221E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F752142B40900CF221E /* SocialButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		9A310F7B2142BBCB00CF221E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F7C2142BBE000CF221E /* MainCoordinator.swift */,
+				9A310F7E2142BBED00CF221E /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		9A89708C2142A1EE00066E72 = {
@@ -170,6 +198,8 @@
 		9A8970972142A1EE00066E72 /* Social */ = {
 			isa = PBXGroup;
 			children = (
+				9A310F7B2142BBCB00CF221E /* Coordinator */,
+				9A310F742142B3EC00CF221E /* CustomViews */,
 				9A310F6A2142A99500CF221E /* Authentication */,
 				9A8970D12142A59D00066E72 /* Resources */,
 				9A8970CC2142A42C00066E72 /* Extensions */,
@@ -222,6 +252,7 @@
 			children = (
 				9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */,
 				9A310F722142AF2B00CF221E /* UIViewController+Extensions.swift */,
+				9A310F772142B87C00CF221E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -464,9 +495,14 @@
 				9A8970C82142A3A600066E72 /* HomeController.swift in Sources */,
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
+				9A310F7D2142BBE000CF221E /* MainCoordinator.swift in Sources */,
 				9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */,
 				9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */,
+				9A310F7F2142BBED00CF221E /* Coordinator.swift in Sources */,
 				9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */,
+				9A310F782142B87C00CF221E /* UIView+Extensions.swift in Sources */,
+				9A310F762142B40900CF221E /* SocialButton.swift in Sources */,
+				9A310F7A2142BA9700CF221E /* RegisterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

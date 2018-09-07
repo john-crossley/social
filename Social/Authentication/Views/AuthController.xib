@@ -13,7 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthController" customModule="Social" customModuleProvider="target">
             <connections>
-                <outlet property="titleLabel" destination="v7Q-90-eX6" id="gp4-gp-D7J"/>
+                <outlet property="loginButton" destination="OxP-HI-sHA" id="S2n-4I-FKQ"/>
+                <outlet property="registerButton" destination="oBV-zU-CTs" id="DnS-J4-Kbt"/>
+                <outlet property="titleLabel" destination="v7Q-90-eX6" id="cB3-Wp-AzB"/>
                 <outlet property="view" destination="RgS-Qk-o2F" id="YOo-DL-DbQ"/>
             </connections>
         </placeholder>
@@ -29,29 +31,42 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m8C-fc-qkI" userLabel="Action Buttons">
-                    <rect key="frame" x="16" y="295.5" width="343" height="96"/>
+                    <rect key="frame" x="16" y="285.5" width="343" height="116"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVP-xT-eZr">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-zU-CTs" customClass="SocialButton" customModule="Social" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
                             <color key="backgroundColor" name="accentColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="TQH-GC-ae1"/>
+                                <constraint firstAttribute="height" constant="54" id="FJU-dx-Qm5"/>
                             </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                             <state key="normal" title="Register">
-                                <color key="titleColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapRegisterWithSender:" destination="-1" eventType="touchUpInside" id="Z1E-9Z-4fg"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-Ep-IrC">
-                            <rect key="frame" x="0.0" y="52" width="343" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxP-HI-sHA" customClass="SocialButton" customModule="Social" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="62" width="343" height="54"/>
                             <color key="backgroundColor" name="accentColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="rrj-8M-UpN"/>
+                                <constraint firstAttribute="height" constant="54" id="oxf-EY-f5E"/>
                             </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                             <state key="normal" title="Login">
-                                <color key="titleColor" red="0.95294117649999999" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
                 </stackView>

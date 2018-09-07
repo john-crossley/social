@@ -36,7 +36,9 @@ extension CustomAppDelegate {
     private func setupApp() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: HomeController())
+
+        let coordinator = MainCoordinator(root: .authentication)
+        window?.rootViewController = coordinator.navigationController
     }
 
 }
