@@ -12,7 +12,7 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private var coordinator: MainCoordinator?
+    private var mainCoordinator: MainCoordinator?
     private let appearance = GlobalAppearance()
 
     var window: UIWindow?
@@ -36,10 +36,9 @@ extension CustomAppDelegate {
 
     private func setupApp() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-
-        coordinator = MainCoordinator(root: .authentication)
-        window?.rootViewController = coordinator?.navigationController
+        guard let window = window else { return }
+        mainCoordinator = MainCoordinator(window: window)
+        mainCoordinator?.start()
     }
 
 }

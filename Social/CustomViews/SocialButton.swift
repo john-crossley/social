@@ -19,6 +19,9 @@ class SocialButton: UIButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        renderShadow()
+        renderShadow(intensity: .medium)
+
+        backgroundColor = .accentColor
+        setTitleColor(UIColor.white, for: .normal)
     }
 }

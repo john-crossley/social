@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import FirebaseAuth
+
+class FirebaseAuthService: AuthService {
+
+    func createAccount(user: UserRegister, callback: @escaping (Result<String>) -> Void) {
+
+        Auth.auth().createUser(withEmail: user.email, password: user.password) { (result, error) in
+
+            if let error = error {
+                callback(.error(error.localizedDescription))
+                return
+            }
+
+            callback(.success("Thanks for registering to an account on Sōsharu. Please check your email and verify your account."))
+
+        }
+
+    }
+
+}

@@ -11,34 +11,48 @@ import UIKit
 class MainCoordinator: Coordinator {
     typealias CoordinatedViewController = UIViewController & Coordinated
 
+    private let window: UIWindow
     let navigationController: UINavigationController
 
-    enum Root {
-        case authentication, home
+    init(window: UIWindow) {
+        self.window = window
+        self.navigationController = UINavigationController()
+        navigationController.pushViewController(makeRootController(), animated: true)
     }
 
-    init(root: Root) {
-        var controller = MainCoordinator.rootController(for: root)
-        navigationController = UINavigationController(rootViewController: controller)
+    private func makeRootController() -> UIViewController {
+        let controller = AuthController()
         controller.coordinator = self
+        return controller
     }
 
-    func register() {
+    func start() {
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+    }
+
+    func auth() {
         present {
-            return RegisterController()
+            let viewModel = RegisterViewModel(service: DependencyContainer.authService)
+            let controller = RegisterController(with: viewModel, validationService: FormValidationService())
+            controller.coordinator = self
+            return controller
         }
     }
 
-    private static func rootController(for root: Root) -> CoordinatedViewController {
-        switch root {
-        case .authentication:
-            return AuthController()
-        case .home:
-            return HomeController()
+    func presentFeed() {
+        reset {
+            let controller = HomeController()
+            controller.coordinator = self
+            return [controller]
         }
     }
 
     private func present(block: () -> (UIViewController)) {
         navigationController.pushViewController(block(), animated: true)
+    }
+
+    private func reset(block: () -> ([UIViewController])) {
+        navigationController.setViewControllers(block(), animated: true)
     }
 }

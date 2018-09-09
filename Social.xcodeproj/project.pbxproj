@@ -15,6 +15,13 @@
 		9A310F7A2142BA9700CF221E /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F792142BA9700CF221E /* RegisterController.swift */; };
 		9A310F7D2142BBE000CF221E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F7C2142BBE000CF221E /* MainCoordinator.swift */; };
 		9A310F7F2142BBED00CF221E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F7E2142BBED00CF221E /* Coordinator.swift */; };
+		9A310F812142C1B600CF221E /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A310F802142C1B600CF221E /* RegisterController.xib */; };
+		9A310F842142C9E100CF221E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F832142C9E100CF221E /* RegisterViewModel.swift */; };
+		9A310F872142CADF00CF221E /* FormValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F862142CADF00CF221E /* FormValidationService.swift */; };
+		9A310F892142D65500CF221E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F882142D65500CF221E /* AuthService.swift */; };
+		9A310F8C2142D68E00CF221E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8B2142D68E00CF221E /* User.swift */; };
+		9A310F8E2142D76400CF221E /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */; };
+		9A310F902142D79900CF221E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8F2142D79900CF221E /* DependencyContainer.swift */; };
 		9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970982142A1EE00066E72 /* AppDelegate.swift */; };
 		9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A89709F2142A1EE00066E72 /* Assets.xcassets */; };
 		9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970A12142A1EE00066E72 /* LaunchScreen.storyboard */; };
@@ -62,6 +69,13 @@
 		9A310F792142BA9700CF221E /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		9A310F7C2142BBE000CF221E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		9A310F7E2142BBED00CF221E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9A310F802142C1B600CF221E /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterController.xib; sourceTree = "<group>"; };
+		9A310F832142C9E100CF221E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		9A310F862142CADF00CF221E /* FormValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationService.swift; sourceTree = "<group>"; };
+		9A310F882142D65500CF221E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		9A310F8B2142D68E00CF221E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		9A310F8F2142D79900CF221E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		9A8970952142A1EE00066E72 /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8970982142A1EE00066E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A89709F2142A1EE00066E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +139,8 @@
 		9A310F6A2142A99500CF221E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				9A310F8A2142D68500CF221E /* Models */,
+				9A310F822142C9D400CF221E /* ViewModels */,
 				9A310F6D2142A9AD00CF221E /* Controllers */,
 				9A310F6C2142A9A600CF221E /* Views */,
 				9A310F6B2142A9A100CF221E /* Services */,
@@ -135,6 +151,9 @@
 		9A310F6B2142A9A100CF221E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9A310F862142CADF00CF221E /* FormValidationService.swift */,
+				9A310F882142D65500CF221E /* AuthService.swift */,
+				9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				9A310F702142AA0100CF221E /* AuthController.xib */,
+				9A310F802142C1B600CF221E /* RegisterController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +193,22 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		9A310F822142C9D400CF221E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F832142C9E100CF221E /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9A310F8A2142D68500CF221E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F8B2142D68E00CF221E /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9A89708C2142A1EE00066E72 = {
 			isa = PBXGroup;
 			children = (
@@ -198,10 +234,10 @@
 		9A8970972142A1EE00066E72 /* Social */ = {
 			isa = PBXGroup;
 			children = (
+				9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */,
 				9A310F7B2142BBCB00CF221E /* Coordinator */,
 				9A310F742142B3EC00CF221E /* CustomViews */,
 				9A310F6A2142A99500CF221E /* Authentication */,
-				9A8970D12142A59D00066E72 /* Resources */,
 				9A8970CC2142A42C00066E72 /* Extensions */,
 				9A8970C92142A3D300066E72 /* Utilities */,
 				9A8970C62142A37F00066E72 /* Home */,
@@ -243,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */,
+				9A310F8F2142D79900CF221E /* DependencyContainer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -255,14 +292,6 @@
 				9A310F772142B87C00CF221E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		9A8970D12142A59D00066E72 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		DC977C4516A2D5D6A9F1100F /* Frameworks */ = {
@@ -384,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */,
+				9A310F812142C1B600CF221E /* RegisterController.xib in Resources */,
 				9A310F712142AA0100CF221E /* AuthController.xib in Resources */,
 				9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */,
 				9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */,
@@ -492,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A310F872142CADF00CF221E /* FormValidationService.swift in Sources */,
 				9A8970C82142A3A600066E72 /* HomeController.swift in Sources */,
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
@@ -499,10 +530,15 @@
 				9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */,
 				9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */,
 				9A310F7F2142BBED00CF221E /* Coordinator.swift in Sources */,
+				9A310F8E2142D76400CF221E /* FirebaseAuthService.swift in Sources */,
+				9A310F8C2142D68E00CF221E /* User.swift in Sources */,
+				9A310F842142C9E100CF221E /* RegisterViewModel.swift in Sources */,
 				9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */,
 				9A310F782142B87C00CF221E /* UIView+Extensions.swift in Sources */,
+				9A310F902142D79900CF221E /* DependencyContainer.swift in Sources */,
 				9A310F762142B40900CF221E /* SocialButton.swift in Sources */,
 				9A310F7A2142BA9700CF221E /* RegisterController.swift in Sources */,
+				9A310F892142D65500CF221E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,7 +714,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.Social;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -698,7 +734,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.Social;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

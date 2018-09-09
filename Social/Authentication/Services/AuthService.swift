@@ -8,6 +8,14 @@
 
 import Foundation
 
-protocol AccountService {
-    func createAccount(user: User)
+enum Result<T> {
+    case success(T)
+    case error(String)
+}
+
+protocol AuthService {
+
+    typealias CreateAccountCallback = (Result<String>) -> Void
+
+    func createAccount(user: UserRegister, callback: @escaping CreateAccountCallback)
 }
