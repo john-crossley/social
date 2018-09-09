@@ -26,7 +26,7 @@ class MainCoordinator: Coordinator {
         var controller: CoordinatedViewController
 
         if authService.isAuthenticated {
-            controller = HomeController()
+            controller = makeHomeController()
         } else {
             controller = AuthController()
         }
@@ -42,18 +42,19 @@ class MainCoordinator: Coordinator {
 
     func auth() {
         present {
-            let viewModel = RegisterViewModel(service: DependencyContainer.authService)
-            let controller = RegisterController(with: viewModel, validationService: FormValidationService())
-            controller.coordinator = self
-            return controller
+            return makeAuthController()
+        }
+    }
+
+    func presentAuth() {
+        reset {
+            return [makeAuthController()]
         }
     }
 
     func presentFeed() {
         reset {
-            let controller = HomeController()
-            controller.coordinator = self
-            return [controller]
+            return [makeHomeController()]
         }
     }
 
@@ -63,5 +64,19 @@ class MainCoordinator: Coordinator {
 
     private func reset(block: () -> ([UIViewController])) {
         navigationController.setViewControllers(block(), animated: true)
+    }
+
+    private func makeAuthController() -> CoordinatedViewController {
+        let viewModel = RegisterViewModel(service: DependencyContainer.authService)
+        let controller = RegisterController(with: viewModel, validationService: FormValidationService())
+        controller.coordinator = self
+        return controller
+    }
+
+    private func makeHomeController() -> CoordinatedViewController {
+        let homeViewModel = HomeViewModel(authService: authService)
+        let controller = HomeController(viewModel: homeViewModel)
+        controller.coordinator = self
+        return controller
     }
 }

@@ -30,4 +30,15 @@ class FirebaseAuthService: AuthService {
 
     }
 
+    func signOut() -> Bool {
+        do {
+            try Auth.auth().signOut()
+            return true
+        } catch let error {
+            print("Unable to sign out. Reason=\(error.localizedDescription)")
+        }
+
+        return false
+    }
+
 }

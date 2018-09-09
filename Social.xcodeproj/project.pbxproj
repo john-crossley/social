@@ -31,6 +31,7 @@
 		9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */; };
 		9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */; };
 		9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */; };
+		9AC09CD32145ADFC004C5314 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */; };
 		C369AD7C46390D963E8AFF6C /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4231B4B16A6314E18132C0 /* Pods_Social.framework */; };
 		D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */; };
 		EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890100942B1A334D590D1459 /* Pods_SocialUITests.framework */; };
@@ -91,6 +92,7 @@
 		9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppearance.swift; sourceTree = "<group>"; };
 		9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,6 +272,7 @@
 		9A8970C62142A37F00066E72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9AC09CD12145ADF1004C5314 /* ViewModels */,
 				9A8970C72142A3A600066E72 /* HomeController.swift */,
 			);
 			path = Home;
@@ -292,6 +295,14 @@
 				9A310F772142B87C00CF221E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9AC09CD12145ADF1004C5314 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		DC977C4516A2D5D6A9F1100F /* Frameworks */ = {
@@ -523,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A310F872142CADF00CF221E /* FormValidationService.swift in Sources */,
+				9AC09CD32145ADFC004C5314 /* HomeViewModel.swift in Sources */,
 				9A8970C82142A3A600066E72 /* HomeController.swift in Sources */,
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,

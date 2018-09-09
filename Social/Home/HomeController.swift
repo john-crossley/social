@@ -11,7 +11,10 @@ import UIKit
 class HomeController: UIViewController, Coordinated {
     weak var coordinator: MainCoordinator?
 
-    init() {
+    private let viewModel: HomeViewModel
+
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -23,7 +26,13 @@ class HomeController: UIViewController, Coordinated {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Home"
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"), style: .plain, target: self, action: #selector(didTapSignOut(sender:)))
     }
 
+    @objc private func didTapSignOut(sender: UIBarButtonItem) {
+        guard viewModel.signOut else { return }
+        coordinator?.presentAuth()
+    }
 }
 
