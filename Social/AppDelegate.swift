@@ -37,7 +37,7 @@ extension CustomAppDelegate {
     private func setupApp() {
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return }
-        mainCoordinator = MainCoordinator(window: window)
+        mainCoordinator = MainCoordinator(window: window, authService: DependencyContainer.authService)
         mainCoordinator?.start()
     }
 

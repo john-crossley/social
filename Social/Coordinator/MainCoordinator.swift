@@ -12,16 +12,25 @@ class MainCoordinator: Coordinator {
     typealias CoordinatedViewController = UIViewController & Coordinated
 
     private let window: UIWindow
+    private let authService: AuthService
     let navigationController: UINavigationController
 
-    init(window: UIWindow) {
+    init(window: UIWindow, authService: AuthService) {
         self.window = window
+        self.authService = authService
         self.navigationController = UINavigationController()
         navigationController.pushViewController(makeRootController(), animated: true)
     }
 
     private func makeRootController() -> UIViewController {
-        let controller = AuthController()
+        var controller: CoordinatedViewController
+
+        if authService.isAuthenticated {
+            controller = HomeController()
+        } else {
+            controller = AuthController()
+        }
+
         controller.coordinator = self
         return controller
     }

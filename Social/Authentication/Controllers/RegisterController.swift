@@ -73,10 +73,9 @@ class RegisterController: UIViewController, Coordinated {
     }
 
     @IBAction func didTapRegister(sender: SocialButton) {
-        coordinator?.presentFeed()
-//        view.endEditing(true)
-//        guard let user = validationService.userRegister else { return }
-//        viewModel.register(with: user)
+        view.endEditing(true)
+        guard let user = validationService.userRegister else { return }
+        viewModel.register(with: user)
     }
 }
 
@@ -88,7 +87,7 @@ extension RegisterController: RegisterViewModelDelegate {
             suspendRegisterButton()
         case .loaded:
             resetRegisterButton()
-            
+            coordinator?.presentFeed()
         case .error(let message):
             resetRegisterButton()
             showMessage(message)
