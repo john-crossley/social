@@ -100,14 +100,12 @@ extension RegisterController: RegisterViewModelDelegate {
 
     private func suspendRegisterButton() {
         self.registerButton.setTitle("Please wait...", for: .normal)
-        registerButton.layer.opacity = 0.8
-        registerButton.isUserInteractionEnabled = false
+        registerButton.is(.disabled)
     }
 
     private func resetRegisterButton() {
         self.registerButton.setTitle("Create Account", for: .normal)
-        self.registerButton.layer.opacity = 1
-        registerButton.isUserInteractionEnabled = true
+        registerButton.is(.enabled)
     }
 
     private func showMessage(_ message: String) {
@@ -146,11 +144,9 @@ extension RegisterController: FormValidationServiceDelegate {
 
         switch state {
         case .valid:
-            self.registerButton.isEnabled = true
-            self.registerButton.layer.opacity = 1
+            registerButton.is(.enabled)
         case .invalid:
-            self.registerButton.isEnabled = false
-            self.registerButton.layer.opacity = 0.8
+            registerButton.is(.disabled)
         }
 
     }

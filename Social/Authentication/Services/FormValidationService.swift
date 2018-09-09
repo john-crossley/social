@@ -57,6 +57,12 @@ class FormValidationService {
         return UserRegister(email: email, password: password)
     }
 
+    var userLogin: UserLogin? {
+        guard let email = inputs[.email],
+            let password = inputs[.password] else { return nil }
+        return UserLogin(email: email, password: password)
+    }
+
     private func performValidation() {
         for (_, value) in inputs {
             if value.count > 3 {

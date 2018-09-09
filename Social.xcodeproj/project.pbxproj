@@ -34,6 +34,7 @@
 		9AC09CD32145ADFC004C5314 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */; };
 		9AC09CDD2145B267004C5314 /* SignInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC09CDC2145B267004C5314 /* SignInController.xib */; };
 		9AC09CDF2145B353004C5314 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CDE2145B353004C5314 /* SignInController.swift */; };
+		9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CE12145B57A004C5314 /* SignInViewModel.swift */; };
 		C369AD7C46390D963E8AFF6C /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4231B4B16A6314E18132C0 /* Pods_Social.framework */; };
 		D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */; };
 		EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890100942B1A334D590D1459 /* Pods_SocialUITests.framework */; };
@@ -97,6 +98,7 @@
 		9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9AC09CDC2145B267004C5314 /* SignInController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInController.xib; sourceTree = "<group>"; };
 		9AC09CDE2145B353004C5314 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		9AC09CE12145B57A004C5314 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -345,6 +347,7 @@
 		9AC09CD92145B244004C5314 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				9AC09CE02145B56E004C5314 /* ViewModels */,
 				9AC09CDB2145B24E004C5314 /* Controllers */,
 				9AC09CDA2145B24A004C5314 /* Views */,
 			);
@@ -365,6 +368,14 @@
 				9AC09CDE2145B353004C5314 /* SignInController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9AC09CE02145B56E004C5314 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CE12145B57A004C5314 /* SignInViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		DC977C4516A2D5D6A9F1100F /* Frameworks */ = {
@@ -600,6 +611,7 @@
 				9AC09CD32145ADFC004C5314 /* HomeViewModel.swift in Sources */,
 				9A8970C82142A3A600066E72 /* HomeController.swift in Sources */,
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
+				9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
 				9A310F7D2142BBE000CF221E /* MainCoordinator.swift in Sources */,
 				9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */,

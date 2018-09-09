@@ -48,7 +48,8 @@ class MainCoordinator: Coordinator {
 
     func signIn() {
         present {
-            let controller = SignInController()
+            let viewModel = SignInViewModel(authService: DependencyContainer.authService)
+            let controller = SignInController(viewModel: viewModel, validationService: FormValidationService())
             controller.coordinator = self
             return controller
         }

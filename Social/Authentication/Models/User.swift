@@ -18,3 +18,8 @@ struct UserRegister {
     let email: String
     let password: String
 }
+
+struct UserLogin {
+    let email: String
+    let password: String
+}
