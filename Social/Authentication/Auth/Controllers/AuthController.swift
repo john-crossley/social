@@ -36,4 +36,8 @@ class AuthController: UIViewController, Coordinated {
     @IBAction func didTapRegister(sender: SocialButton) {
         coordinator?.auth()
     }
+
+    @IBAction func didTapSignIn(sender: SocialButton) {
+        coordinator?.signIn()
+    }
 }

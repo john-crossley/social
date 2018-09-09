@@ -67,6 +67,9 @@
                                     <real key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapSignInSender:" destination="-1" eventType="touchUpInside" id="TNa-8m-4Fe"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

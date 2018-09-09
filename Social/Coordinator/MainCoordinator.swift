@@ -46,6 +46,14 @@ class MainCoordinator: Coordinator {
         }
     }
 
+    func signIn() {
+        present {
+            let controller = SignInController()
+            controller.coordinator = self
+            return controller
+        }
+    }
+
     func presentAuth() {
         reset {
             return [makeAuthController()]

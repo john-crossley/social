@@ -32,6 +32,8 @@
 		9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */; };
 		9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */; };
 		9AC09CD32145ADFC004C5314 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */; };
+		9AC09CDD2145B267004C5314 /* SignInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC09CDC2145B267004C5314 /* SignInController.xib */; };
+		9AC09CDF2145B353004C5314 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CDE2145B353004C5314 /* SignInController.swift */; };
 		C369AD7C46390D963E8AFF6C /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4231B4B16A6314E18132C0 /* Pods_Social.framework */; };
 		D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */; };
 		EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890100942B1A334D590D1459 /* Pods_SocialUITests.framework */; };
@@ -93,6 +95,8 @@
 		9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9AC09CDC2145B267004C5314 /* SignInController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInController.xib; sourceTree = "<group>"; };
+		9AC09CDE2145B353004C5314 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,10 +145,10 @@
 		9A310F6A2142A99500CF221E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				9AC09CD92145B244004C5314 /* SignIn */,
+				9AC09CD72145B1F3004C5314 /* Auth */,
+				9AC09CD42145B1BE004C5314 /* Register */,
 				9A310F8A2142D68500CF221E /* Models */,
-				9A310F822142C9D400CF221E /* ViewModels */,
-				9A310F6D2142A9AD00CF221E /* Controllers */,
-				9A310F6C2142A9A600CF221E /* Views */,
 				9A310F6B2142A9A100CF221E /* Services */,
 			);
 			path = Authentication;
@@ -164,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				9A310F702142AA0100CF221E /* AuthController.xib */,
-				9A310F802142C1B600CF221E /* RegisterController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				9A310F6E2142A9CA00CF221E /* AuthController.swift */,
-				9A310F792142BA9700CF221E /* RegisterController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +307,66 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		9AC09CD42145B1BE004C5314 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CD62145B1E9004C5314 /* Views */,
+				9AC09CD52145B1D9004C5314 /* Controllers */,
+				9A310F822142C9D400CF221E /* ViewModels */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		9AC09CD52145B1D9004C5314 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F792142BA9700CF221E /* RegisterController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9AC09CD62145B1E9004C5314 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F802142C1B600CF221E /* RegisterController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9AC09CD72145B1F3004C5314 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F6D2142A9AD00CF221E /* Controllers */,
+				9A310F6C2142A9A600CF221E /* Views */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		9AC09CD92145B244004C5314 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CDB2145B24E004C5314 /* Controllers */,
+				9AC09CDA2145B24A004C5314 /* Views */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		9AC09CDA2145B24A004C5314 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CDC2145B267004C5314 /* SignInController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9AC09CDB2145B24E004C5314 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CDE2145B353004C5314 /* SignInController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		DC977C4516A2D5D6A9F1100F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +490,7 @@
 				9A310F712142AA0100CF221E /* AuthController.xib in Resources */,
 				9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */,
 				9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */,
+				9AC09CDD2145B267004C5314 /* SignInController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +613,7 @@
 				9A310F902142D79900CF221E /* DependencyContainer.swift in Sources */,
 				9A310F762142B40900CF221E /* SocialButton.swift in Sources */,
 				9A310F7A2142BA9700CF221E /* RegisterController.swift in Sources */,
+				9AC09CDF2145B353004C5314 /* SignInController.swift in Sources */,
 				9A310F892142D65500CF221E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
