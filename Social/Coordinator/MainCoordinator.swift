@@ -41,41 +41,54 @@ class MainCoordinator: Coordinator {
     }
 
     func auth() {
-        present {
-            return makeAuthController()
+        push {
+            return makeRegisterController()
         }
     }
 
-    func signIn() {
-        present {
-            let viewModel = SignInViewModel(authService: DependencyContainer.authService)
-            let controller = SignInController(viewModel: viewModel, validationService: FormValidationService())
+    enum PresentationStyle {
+        case new
+        case push
+    }
+
+    func signIn(_ style: PresentationStyle) {
+        let viewModel = SignInViewModel(authService: DependencyContainer.authService)
+        let controller = SignInController(viewModel: viewModel, validationService: FormValidationService())
+        controller.coordinator = self
+
+        if style == .push {
+            push { controller }
+        } else if style == .new {
+            new { [controller] }
+        }
+    }
+
+    func register() {
+        push {
+            let viewModel = RegisterViewModel(service: DependencyContainer.authService)
+            let controller = RegisterController(with: viewModel, validationService: FormValidationService())
             controller.coordinator = self
             return controller
         }
     }
 
     func presentAuth() {
-        reset {
-            return [makeAuthController()]
-        }
+        new { return [makeRegisterController()] }
     }
 
     func presentFeed() {
-        reset {
-            return [makeHomeController()]
-        }
+        new { return [makeHomeController()] }
     }
 
-    private func present(block: () -> (UIViewController)) {
+    private func push(block: () -> (UIViewController)) {
         navigationController.pushViewController(block(), animated: true)
     }
 
-    private func reset(block: () -> ([UIViewController])) {
-        navigationController.setViewControllers(block(), animated: true)
+    private func new(shouldAnimate: Bool = true, block: () -> ([UIViewController])) {
+        navigationController.setViewControllers(block(), animated: shouldAnimate)
     }
 
-    private func makeAuthController() -> CoordinatedViewController {
+    private func makeRegisterController() -> CoordinatedViewController {
         let viewModel = RegisterViewModel(service: DependencyContainer.authService)
         let controller = RegisterController(with: viewModel, validationService: FormValidationService())
         controller.coordinator = self

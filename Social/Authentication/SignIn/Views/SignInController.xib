@@ -33,7 +33,7 @@ enter email and password</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-DD-Hgd" userLabel="Form">
-                    <rect key="frame" x="32" y="170.5" width="311" height="223"/>
+                    <rect key="frame" x="32" y="170.5" width="311" height="174"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john@example.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZSN-DO-szL">
                             <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
@@ -51,7 +51,7 @@ enter email and password</string>
                             </constraints>
                             <color key="textColor" name="accentColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="password"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTn-CT-2VN" customClass="SocialButton" customModule="Social" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="120" width="311" height="54"/>
@@ -65,28 +65,10 @@ enter email and password</string>
                                     <real key="value" value="8"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapSignInSender:" destination="-1" eventType="touchUpInside" id="KHW-FK-S4Y"/>
+                            </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D25-tQ-7Ib" userLabel="Meta">
-                            <rect key="frame" x="0.0" y="190" width="311" height="33"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQu-hO-GJF">
-                                    <rect key="frame" x="0.0" y="0.0" width="179" height="33"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r95-ql-2Jj">
-                                    <rect key="frame" x="187" y="0.0" width="124" height="33"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <state key="normal" title="Register">
-                                        <color key="titleColor" name="accentColor"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="didTapRegisterWithSender:" destination="-1" eventType="touchUpInside" id="vzx-Pe-Jwu"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                        </stackView>
                     </subviews>
                 </stackView>
             </subviews>

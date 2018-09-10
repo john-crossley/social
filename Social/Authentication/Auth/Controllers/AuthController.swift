@@ -23,21 +23,16 @@ class AuthController: UIViewController, Coordinated {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.textColor = .accentColor
     }
 
     @IBAction func didTapRegister(sender: SocialButton) {
-        coordinator?.auth()
+        coordinator?.register()
     }
 
     @IBAction func didTapSignIn(sender: SocialButton) {
-        coordinator?.signIn()
+        coordinator?.signIn(.push)
     }
 }

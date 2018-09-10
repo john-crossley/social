@@ -16,10 +16,13 @@ enum Result<T> {
 protocol AuthService {
 
     typealias CreateAccountCallback = (Result<String>) -> Void
+    typealias SignInCallback = (Result<String>) -> Void
 
     var isAuthenticated: Bool { get }
     func createAccount(user: UserRegister, callback: @escaping CreateAccountCallback)
 
     @discardableResult
     func signOut() -> Bool
+
+    func signIn(user: UserLogin, callback: SignInCallback?)
 }

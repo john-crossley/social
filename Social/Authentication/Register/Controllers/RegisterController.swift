@@ -77,10 +77,6 @@ class RegisterController: UIViewController, Coordinated {
         guard let user = validationService.userRegister else { return }
         viewModel.register(with: user)
     }
-
-    @IBAction func didTapSignIn(sender: UIButton) {
-        coordinator?.signIn()
-    }
 }
 
 extension RegisterController: RegisterViewModelDelegate {

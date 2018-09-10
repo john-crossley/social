@@ -32,7 +32,7 @@ class HomeController: UIViewController, Coordinated {
 
     @objc private func didTapSignOut(sender: UIBarButtonItem) {
         guard viewModel.signOut else { return }
-        coordinator?.presentAuth()
+        coordinator?.signIn(.new)
     }
 }
 

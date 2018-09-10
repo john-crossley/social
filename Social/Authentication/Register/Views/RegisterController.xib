@@ -34,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-HZ-0uo" userLabel="Form">
-                    <rect key="frame" x="32" y="170.5" width="311" height="283"/>
+                    <rect key="frame" x="32" y="170.5" width="311" height="234"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-Jp-bsj">
                             <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
@@ -61,7 +61,7 @@
                             </constraints>
                             <color key="textColor" name="accentColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="password"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-0T-qVc" customClass="SocialButton" customModule="Social" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="180" width="311" height="54"/>
@@ -79,27 +79,6 @@
                                 <action selector="didTapRegisterWithSender:" destination="-1" eventType="touchUpInside" id="Sqi-0F-zOC"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CuB-d9-dxr" userLabel="Meta">
-                            <rect key="frame" x="0.0" y="250" width="311" height="33"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yel-Ig-p8M">
-                                    <rect key="frame" x="0.0" y="0.0" width="196" height="33"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSK-6q-VzT">
-                                    <rect key="frame" x="204" y="0.0" width="107" height="33"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <state key="normal" title="Sign In">
-                                        <color key="titleColor" name="accentColor"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="didTapSignInSender:" destination="-1" eventType="touchUpInside" id="eUg-rW-w8J"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                        </stackView>
                     </subviews>
                 </stackView>
             </subviews>

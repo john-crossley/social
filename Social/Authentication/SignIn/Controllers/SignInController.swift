@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GyozaKit
 
 class SignInController: UIViewController, Coordinated {
     var coordinator: MainCoordinator?
@@ -29,6 +30,10 @@ class SignInController: UIViewController, Coordinated {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "Sign In"
+
+        viewModel.delegate = self
         validationService.delegate = self
         validationService.prepare([.email, .password])
 
@@ -37,10 +42,6 @@ class SignInController: UIViewController, Coordinated {
 
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-    }
-
-    @IBAction func didTapRegister(sender: UIButton) {
-        coordinator?.presentAuth()
     }
 
     @IBAction func didTapSignIn(sender: SocialButton) {
@@ -58,6 +59,25 @@ extension SignInController: UITextFieldDelegate {
             validationService.add(.email, for: text)
         } else if textField == passwordTextField {
             validationService.add(.password, for: text)
+        }
+    }
+}
+
+extension SignInController: SignInViewModelDelegate {
+    func didUpdate(state: SignInViewModel.State) {
+        switch state {
+        case .idle:
+            break
+        case .loading:
+            break
+        case .loaded:
+            coordinator?.presentFeed()
+        case .error(let message):
+            let gyoza = Gyoza { builder in
+                builder.pinTo = .top
+                builder.message = message
+            }
+            gyoza?.show(on: self.view)
         }
     }
 }

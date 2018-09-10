@@ -41,4 +41,14 @@ class FirebaseAuthService: AuthService {
         return false
     }
 
+    func signIn(user: UserLogin, callback: SignInCallback?) {
+        Auth.auth().signIn(withEmail: user.email, password: user.password) { (result, error) in
+            if let error = error {
+                callback?(.error(error.localizedDescription))
+                return
+            }
+
+            callback?(.success("Success!"))
+        }
+    }
 }
