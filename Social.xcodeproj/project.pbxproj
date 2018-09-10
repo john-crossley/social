@@ -35,6 +35,7 @@
 		9AC09CDD2145B267004C5314 /* SignInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC09CDC2145B267004C5314 /* SignInController.xib */; };
 		9AC09CDF2145B353004C5314 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CDE2145B353004C5314 /* SignInController.swift */; };
 		9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CE12145B57A004C5314 /* SignInViewModel.swift */; };
+		9AC09CE92146D925004C5314 /* FormValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */; };
 		C369AD7C46390D963E8AFF6C /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4231B4B16A6314E18132C0 /* Pods_Social.framework */; };
 		D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */; };
 		EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890100942B1A334D590D1459 /* Pods_SocialUITests.framework */; };
@@ -99,6 +100,7 @@
 		9AC09CDC2145B267004C5314 /* SignInController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInController.xib; sourceTree = "<group>"; };
 		9AC09CDE2145B353004C5314 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		9AC09CE12145B57A004C5314 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationServiceTest.swift; sourceTree = "<group>"; };
 		CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +161,6 @@
 		9A310F6B2142A9A100CF221E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9A310F862142CADF00CF221E /* FormValidationService.swift */,
 				9A310F882142D65500CF221E /* AuthService.swift */,
 				9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */,
 			);
@@ -258,6 +259,7 @@
 		9A8970AC2142A1EE00066E72 /* SocialTests */ = {
 			isa = PBXGroup;
 			children = (
+				9AC09CE62146D912004C5314 /* Utilities */,
 				9A8970AD2142A1EE00066E72 /* SocialTests.swift */,
 				9A8970AF2142A1EE00066E72 /* Info.plist */,
 			);
@@ -285,6 +287,7 @@
 		9A8970C92142A3D300066E72 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9AC09CE32146D8F6004C5314 /* Services */,
 				9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */,
 				9A310F8F2142D79900CF221E /* DependencyContainer.swift */,
 			);
@@ -376,6 +379,30 @@
 				9AC09CE12145B57A004C5314 /* SignInViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9AC09CE32146D8F6004C5314 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9A310F862142CADF00CF221E /* FormValidationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9AC09CE62146D912004C5314 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CE72146D918004C5314 /* Services */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9AC09CE72146D918004C5314 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DC977C4516A2D5D6A9F1100F /* Frameworks */ = {
@@ -634,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC09CE92146D925004C5314 /* FormValidationServiceTest.swift in Sources */,
 				9A8970AE2142A1EE00066E72 /* SocialTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
