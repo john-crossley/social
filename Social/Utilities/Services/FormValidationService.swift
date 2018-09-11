@@ -8,66 +8,61 @@
 
 import Foundation
 
-enum FormValidationError: Error {
-    case empty
-    case invalidInput
+class FormInput {
+    let rules: [Rule]
+    var isValid: Bool = false
+    var errors: [String] = []
+
+    init(_ rules: [Rule], isValid: Bool = false) {
+        self.rules = rules
+        self.isValid = isValid
+    }
 }
 
 protocol FormValidationServiceDelegate: class {
-    func didUpdateForm(state: FormValidationService.FormState)
+    func isFormValid(_ isValid: Bool)
 }
 
 class FormValidationService {
 
-    enum FormState {
-        case valid, invalid(FormValidationError)
-    }
-
-    private var formState: FormState = .invalid(.empty)
-
     weak var delegate: FormValidationServiceDelegate?
 
-    enum FormInput: CaseIterable {
-        case name
-        case email
-        case password
+    private var inputs: [String: FormInput] = [:]
+
+    func set(rules: [Rule], for label: String) {
+        self.inputs[label] = FormInput(rules)
     }
 
-    private var inputs: [FormInput: String] = [:]
-
-    func prepare(_ fields: [FormInput]) {
-        fields.forEach { inputs[$0] = "" }
-        self.formState = .invalid(.empty)
-        delegate?.didUpdateForm(state: self.formState)
+    func errors(for label: String) -> [String] {
+        return inputs[label]?.errors ?? []
     }
 
-    func add(_ input: FormInput, for value: String) {
-        self.inputs[input] = value.trimmingCharacters(in: .whitespaces)
-        validate()
+    var isValid: Bool {
+        return inputs.values.filter { !$0.isValid }.isEmpty
     }
 
-    func validate() {
-        for (key, value) in inputs {
-            print("key=\(key)", "value=\(value)")
-            if value.count > 3 {
-                self.formState = .valid
-            } else {
-                self.formState = .invalid(.invalidInput)
-            }
+    func validate(_ text: String, for label: String) {
+
+        guard let formInput = formInput(for: label) else { return }
+        formInput.isValid = true
+
+        for rule in formInput.rules {
+            let result = rule.validate(text)
+
+            guard !result.isValid else { continue }
+
+            formInput.isValid = false
+            formInput.errors.append(result.message)
         }
 
-        delegate?.didUpdateForm(state: self.formState)
+        delegate?.isFormValid(self.isValid)
     }
 
-    var userRegister: UserRegister? {
-        guard let email = inputs[.email],
-            let password = inputs[.password] else { return nil }
-        return UserRegister(email: email, password: password)
+    private func formInput(for label: String) -> FormInput? {
+        return inputs[label]
     }
 
-    var userLogin: UserLogin? {
-        guard let email = inputs[.email],
-            let password = inputs[.password] else { return nil }
-        return UserLogin(email: email, password: password)
+    private func rules(for label: String) -> [Rule] {
+        return inputs[label]?.rules ?? []
     }
 }

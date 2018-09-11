@@ -48,34 +48,36 @@ class RegisterController: UIViewController, Coordinated {
     private func parepareForm() {
         nameTextField.delegate = self
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        validationService.set(rules: [MinRule(3)], for: "name")
 
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        validationService.set(rules: [MinRule(3)], for: "email")
 
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        validationService.set(rules: [MinRule(3)], for: "password")
 
         resetRegisterButton()
-
-        validationService.prepare([.name, .email, .password])
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
 
         if textField == nameTextField {
-            validationService.add(.name, for: text)
+            validationService.validate(text, for: "name")
         } else if textField == emailTextField {
-            validationService.add(.email, for: text)
+            validationService.validate(text, for: "email")
         } else if textField == passwordTextField {
-            validationService.add(.password, for: text)
+            validationService.validate(text, for: "password")
         }
     }
 
     @IBAction func didTapRegister(sender: SocialButton) {
         view.endEditing(true)
-        guard let user = validationService.userRegister else { return }
-        viewModel.register(with: user)
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else { return }
+        viewModel.register(with: email, and: password)
     }
 }
 
@@ -87,7 +89,7 @@ extension RegisterController: RegisterViewModelDelegate {
             suspendRegisterButton()
         case .loaded:
             resetRegisterButton()
-            coordinator?.presentFeed()
+            coordinator?.feed()
         case .error(let message):
             resetRegisterButton()
             showMessage(message)
@@ -101,7 +103,7 @@ extension RegisterController: RegisterViewModelDelegate {
 
     private func resetRegisterButton() {
         self.registerButton.setTitle("Create Account", for: .normal)
-        registerButton.is(.enabled)
+        registerButton.is(.disabled)
     }
 
     private func showMessage(_ message: String) {
@@ -115,11 +117,6 @@ extension RegisterController: RegisterViewModelDelegate {
 }
 
 extension RegisterController: UITextFieldDelegate {
-
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        validationService.validate()
-        return true
-    }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
@@ -136,14 +133,7 @@ extension RegisterController: UITextFieldDelegate {
 }
 
 extension RegisterController: FormValidationServiceDelegate {
-    func didUpdateForm(state: FormValidationService.FormState) {
-
-        switch state {
-        case .valid:
-            registerButton.is(.enabled)
-        case .invalid:
-            registerButton.is(.disabled)
-        }
-
+    func isFormValid(_ isValid: Bool) {
+        registerButton.is( isValid ? .enabled : .disabled )
     }
 }

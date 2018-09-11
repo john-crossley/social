@@ -12,14 +12,9 @@ struct User {
     let name: String
     let email: String
     let password: String
-}
 
-struct UserRegister {
-    let email: String
-    let password: String
-}
-
-struct UserLogin {
-    let email: String
-    let password: String
+    struct Auth {
+        let email: String
+        let password: String
+    }
 }

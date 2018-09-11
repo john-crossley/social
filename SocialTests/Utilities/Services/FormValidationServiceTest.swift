@@ -13,70 +13,66 @@ class MockFormValidationServiceDelegate: FormValidationServiceDelegate {
 
     var isValid: Bool = false
 
-    func didUpdateForm(state: FormValidationService.FormState) {
-        switch state {
-        case .valid: isValid = true
-        case .invalid: isValid = false
-        }
+    func isFormValid(_ isValid: Bool) {
+        self.isValid = isValid
     }
 }
 
 class FormValidationServiceTests: XCTestCase {
-    func testItIsInvalidWhenRequirementsAreNotMet() {
+
+    func testItIsValidWhenRequirementsMetUsing() {
 
         let service = FormValidationService()
-        let mockServiceDelegate = MockFormValidationServiceDelegate()
 
-        service.delegate = mockServiceDelegate
-        service.prepare([.name, .email, .password])
-        service.validate()
+        service.set(rules: [MinRule(3), MaxRule(12)], for: "username")
+        service.validate("jo", for: "username")
+        XCTAssertFalse(service.isValid)
+        XCTAssertEqual("Not enough characters, minimum is 3", service.errors(for: "username").first!)
 
-        XCTAssertFalse(mockServiceDelegate.isValid)
+
     }
 
-    func testItIsValidWhenRequirementsMet() {
+    func testItIsValidWhenRequirementsMetUsingDelegate() {
         let service = FormValidationService()
         let mockServiceDelegate = MockFormValidationServiceDelegate()
-
         service.delegate = mockServiceDelegate
-        service.prepare([.name])
-        service.add(.name, for: "John Crossley")
-        service.validate()
+
+        service.set(rules: [MinRule(3)], for: "username")
+        service.set(rules: [MinRule(8)], for: "password")
+
+        service.validate("john.crossley", for: "username")
+        service.validate("mySecurePassword", for: "password")
 
         XCTAssertTrue(mockServiceDelegate.isValid)
     }
 
-    func testItCanReturnUserRegisterFromValidInput() {
+    func testItCanValidateMinCharacters() {
+
         let service = FormValidationService()
         let mockServiceDelegate = MockFormValidationServiceDelegate()
-
         service.delegate = mockServiceDelegate
-        service.prepare([.name, .email, .password])
 
-        service.add(.name, for: "John Crossley")
-        service.add(.email, for: "john@example.com")
-        service.add(.password, for: "password")
+        service.set(rules: [MinRule(3), MaxRule(10)], for: "name")
+        service.validate("abc123456", for: "name")
 
-        let user = service.userRegister!
-
-        XCTAssertEqual(user.email, "john@example.com")
-        XCTAssertEqual(user.password, "password")
+        XCTAssertTrue(mockServiceDelegate.isValid)
     }
 
-    func testItCanReturnUserLoginFromValidInput() {
+    func testItCanReturnTheCorrectErrorMessageWhenFailedValidation() {
         let service = FormValidationService()
         let mockServiceDelegate = MockFormValidationServiceDelegate()
-
         service.delegate = mockServiceDelegate
-        service.prepare([.name, .email, .password])
 
-        service.add(.name, for: "Jane Doe")
-        service.add(.email, for: "jane.doe@example.com")
-        service.add(.password, for: "greenbean")
+        service.set(rules: [MaxRule(12)], for: "username")
+        service.validate("i_have_a_long_username", for: "username")
 
-        let user = service.userLogin!
+        XCTAssertFalse(mockServiceDelegate.isValid)
+        XCTAssertEqual("Too many characters, max length is 12", service.errors(for: "username").first!)
 
-        XCTAssertEqual(user.email, "jane.doe@example.com")
-        XCTAssertEqual(user.password, "greenbean")
+        service.set(rules: [MinRule(3)], for: "name")
+        service.validate("he", for: "name")
+
+        XCTAssertFalse(mockServiceDelegate.isValid)
+        XCTAssertEqual("Not enough characters, minimum is 3", service.errors(for: "name").first!)
     }
 }

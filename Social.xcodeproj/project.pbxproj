@@ -31,6 +31,9 @@
 		9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */; };
 		9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */; };
 		9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */; };
+		9AB7DF9721471A7500EA075C /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9621471A7500EA075C /* Rule.swift */; };
+		9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9821471A8400EA075C /* MaxRule.swift */; };
+		9AB7DF9B21471A9500EA075C /* MinRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9A21471A9500EA075C /* MinRule.swift */; };
 		9AC09CD32145ADFC004C5314 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */; };
 		9AC09CDD2145B267004C5314 /* SignInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC09CDC2145B267004C5314 /* SignInController.xib */; };
 		9AC09CDF2145B353004C5314 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CDE2145B353004C5314 /* SignInController.swift */; };
@@ -96,6 +99,9 @@
 		9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppearance.swift; sourceTree = "<group>"; };
 		9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9AB7DF9621471A7500EA075C /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		9AB7DF9821471A8400EA075C /* MaxRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRule.swift; sourceTree = "<group>"; };
+		9AB7DF9A21471A9500EA075C /* MinRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinRule.swift; sourceTree = "<group>"; };
 		9AC09CD22145ADFC004C5314 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9AC09CDC2145B267004C5314 /* SignInController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInController.xib; sourceTree = "<group>"; };
 		9AC09CDE2145B353004C5314 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 		9A8970C92142A3D300066E72 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9AB7DF9421471A6400EA075C /* Validator */,
 				9AC09CE32146D8F6004C5314 /* Services */,
 				9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */,
 				9A310F8F2142D79900CF221E /* DependencyContainer.swift */,
@@ -302,6 +309,24 @@
 				9A310F772142B87C00CF221E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9AB7DF9421471A6400EA075C /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				9AB7DF9521471A6B00EA075C /* Rules */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		9AB7DF9521471A6B00EA075C /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				9AB7DF9621471A7500EA075C /* Rule.swift */,
+				9AB7DF9821471A8400EA075C /* MaxRule.swift */,
+				9AB7DF9A21471A9500EA075C /* MinRule.swift */,
+			);
+			path = Rules;
 			sourceTree = "<group>";
 		};
 		9AC09CD12145ADF1004C5314 /* ViewModels */ = {
@@ -640,15 +665,18 @@
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
 				9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
+				9AB7DF9721471A7500EA075C /* Rule.swift in Sources */,
 				9A310F7D2142BBE000CF221E /* MainCoordinator.swift in Sources */,
 				9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */,
 				9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */,
 				9A310F7F2142BBED00CF221E /* Coordinator.swift in Sources */,
 				9A310F8E2142D76400CF221E /* FirebaseAuthService.swift in Sources */,
+				9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */,
 				9A310F8C2142D68E00CF221E /* User.swift in Sources */,
 				9A310F842142C9E100CF221E /* RegisterViewModel.swift in Sources */,
 				9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */,
 				9A310F782142B87C00CF221E /* UIView+Extensions.swift in Sources */,
+				9AB7DF9B21471A9500EA075C /* MinRule.swift in Sources */,
 				9A310F902142D79900CF221E /* DependencyContainer.swift in Sources */,
 				9A310F762142B40900CF221E /* SocialButton.swift in Sources */,
 				9A310F7A2142BA9700CF221E /* RegisterController.swift in Sources */,

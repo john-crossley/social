@@ -76,7 +76,7 @@ class MainCoordinator: Coordinator {
         new { return [makeRegisterController()] }
     }
 
-    func presentFeed() {
+    func feed() {
         new { return [makeHomeController()] }
     }
 

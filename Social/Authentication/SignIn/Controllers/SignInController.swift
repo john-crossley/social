@@ -35,19 +35,24 @@ class SignInController: UIViewController, Coordinated {
 
         viewModel.delegate = self
         validationService.delegate = self
-        validationService.prepare([.email, .password])
 
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        validationService.set(rules: [MinRule(3)], for: "email")
 
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        validationService.set(rules: [MinRule(3)], for: "password")
+
+        signInButton.is(.disabled)
     }
 
     @IBAction func didTapSignIn(sender: SocialButton) {
         view.endEditing(true)
-        guard let user = validationService.userLogin else { return }
-        viewModel.signIn(with: user)
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else { return }
+
+        viewModel.signIn(with: email, and: password)
     }
 }
 
@@ -56,10 +61,18 @@ extension SignInController: UITextFieldDelegate {
         guard let text = textField.text else { return }
 
         if textField == emailTextField {
-            validationService.add(.email, for: text)
+            validationService.validate(text, for: "email")
         } else if textField == passwordTextField {
-            validationService.add(.password, for: text)
+            validationService.validate(text, for: "password")
         }
+    }
+
+    private func presentGyoza(with message: String) {
+        let gyoza = Gyoza { builder in
+            builder.pinTo = .top
+            builder.message = message
+        }
+        gyoza?.show(on: self.view)
     }
 }
 
@@ -69,26 +82,20 @@ extension SignInController: SignInViewModelDelegate {
         case .idle:
             break
         case .loading:
-            break
+            signInButton.setTitle("Please wait...", for: .normal)
+            signInButton.is(.disabled)
         case .loaded:
-            coordinator?.presentFeed()
+            coordinator?.feed()
         case .error(let message):
-            let gyoza = Gyoza { builder in
-                builder.pinTo = .top
-                builder.message = message
-            }
-            gyoza?.show(on: self.view)
+            presentGyoza(with: message)
+            signInButton.setTitle("Sign In", for: .normal)
+            signInButton.is(.enabled)
         }
     }
 }
 
 extension SignInController: FormValidationServiceDelegate {
-    func didUpdateForm(state: FormValidationService.FormState) {
-        switch state {
-        case .valid:
-            signInButton.is(.enabled)
-        case .invalid(let message):
-            signInButton.is(.disabled)
-        }
+    func isFormValid(_ isValid: Bool) {
+        signInButton.is( isValid ? .enabled : .disabled )
     }
 }

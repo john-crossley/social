@@ -19,10 +19,10 @@ protocol AuthService {
     typealias SignInCallback = (Result<String>) -> Void
 
     var isAuthenticated: Bool { get }
-    func createAccount(user: UserRegister, callback: @escaping CreateAccountCallback)
+    func createAccount(user: User.Auth, callback: @escaping CreateAccountCallback)
 
     @discardableResult
     func signOut() -> Bool
 
-    func signIn(user: UserLogin, callback: SignInCallback?)
+    func signIn(user: User.Auth, callback: SignInCallback?)
 }

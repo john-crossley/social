@@ -15,7 +15,7 @@ class FirebaseAuthService: AuthService {
         return Auth.auth().currentUser != nil
     }
 
-    func createAccount(user: UserRegister, callback: @escaping (Result<String>) -> Void) {
+    func createAccount(user: User.Auth, callback: @escaping (Result<String>) -> Void) {
 
         Auth.auth().createUser(withEmail: user.email, password: user.password) { (result, error) in
 
@@ -41,7 +41,7 @@ class FirebaseAuthService: AuthService {
         return false
     }
 
-    func signIn(user: UserLogin, callback: SignInCallback?) {
+    func signIn(user: User.Auth, callback: SignInCallback?) {
         Auth.auth().signIn(withEmail: user.email, password: user.password) { (result, error) in
             if let error = error {
                 callback?(.error(error.localizedDescription))
