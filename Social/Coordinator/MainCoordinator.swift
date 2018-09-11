@@ -26,7 +26,7 @@ class MainCoordinator: Coordinator {
         var controller: CoordinatedViewController
 
         if authService.isAuthenticated {
-            controller = makeHomeController()
+            controller = makeFeedController()
         } else {
             controller = AuthController()
         }
@@ -77,7 +77,7 @@ class MainCoordinator: Coordinator {
     }
 
     func feed() {
-        new { return [makeHomeController()] }
+        new { return [makeFeedController()] }
     }
 
     private func push(block: () -> (UIViewController)) {
@@ -95,9 +95,8 @@ class MainCoordinator: Coordinator {
         return controller
     }
 
-    private func makeHomeController() -> CoordinatedViewController {
-        let homeViewModel = HomeViewModel(authService: authService)
-        let controller = HomeController(viewModel: homeViewModel)
+    private func makeFeedController() -> CoordinatedViewController {
+        let controller = FeedController(viewModel: FeedViewModel(authService: authService))
         controller.coordinator = self
         return controller
     }

@@ -21,8 +21,8 @@ class GlobalAppearance {
         appearence.isTranslucent = true
         appearence.tintColor = UIColor.accentColor
 
-        appearence.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.accentColor]
-        appearence.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.accentColor]
+        appearence.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.accentColor]
+        appearence.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.accentColor]
     }
 
     private func styleTabBar() {
