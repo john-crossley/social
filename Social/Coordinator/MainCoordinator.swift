@@ -13,11 +13,13 @@ class MainCoordinator: Coordinator {
 
     private let window: UIWindow
     private let authService: AuthService
+    private let feedService: FeedService
     let navigationController: UINavigationController
 
-    init(window: UIWindow, authService: AuthService) {
+    init(window: UIWindow, authService: AuthService, feedService: FeedService) {
         self.window = window
         self.authService = authService
+        self.feedService = feedService
         self.navigationController = UINavigationController()
         navigationController.pushViewController(makeRootController(), animated: true)
     }
@@ -96,7 +98,8 @@ class MainCoordinator: Coordinator {
     }
 
     private func makeFeedController() -> CoordinatedViewController {
-        let controller = FeedController(viewModel: FeedViewModel(authService: authService))
+        let viewModel = FeedViewModel(authService: authService, feedService: feedService)
+        let controller = FeedController(viewModel: viewModel)
         controller.coordinator = self
         return controller
     }

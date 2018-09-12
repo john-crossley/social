@@ -5,6 +5,7 @@ PODS:
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
+  - CodableFirebase (0.2.0)
   - Firebase/Auth (5.7.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.3)
@@ -106,6 +107,7 @@ PODS:
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
+  - CodableFirebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -115,6 +117,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL
+    - CodableFirebase
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -137,6 +140,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
+  CodableFirebase: 4b865f58c583a6c0ef8c81c6b12c6bf15ebd9181
   Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
   FirebaseAnalytics: 993577e91157feb40945abedd6ab346d8a4b6ac8
   FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
@@ -157,6 +161,6 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 35fa7023fb8aa2de437259f6604563da4b01ca21
+PODFILE CHECKSUM: 157387d40ca2b9bf78b7875408f8ae013e466593
 
 COCOAPODS: 1.5.3

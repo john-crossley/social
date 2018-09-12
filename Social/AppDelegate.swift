@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
         setupFirebase()
         setupApp()
@@ -36,7 +36,9 @@ extension CustomAppDelegate {
     private func setupApp() {
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return }
-        mainCoordinator = MainCoordinator(window: window, authService: DependencyContainer.authService)
+        mainCoordinator = MainCoordinator(window: window,
+                                          authService: DependencyContainer.authService,
+                                          feedService: DependencyContainer.feedService)
         mainCoordinator?.start()
     }
 

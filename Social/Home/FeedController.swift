@@ -17,12 +17,19 @@ class FeedController: UIViewController, Coordinated {
     weak var coordinator: MainCoordinator?
 
     private let viewModel: FeedViewModel
+    private var viewModels: [Feed] = [] {
+        didSet { tableView.reloadData() }
+    }
 
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.register(UINib(nibName: "FeedCell", bundle: .main), forCellReuseIdentifier: .feedCellId)
+        view.rowHeight = UITableView.automaticDimension
+        view.estimatedRowHeight = 100
         view.delegate = self
         view.dataSource = self
+        view.separatorStyle = .none
+        view.backgroundColor = UIColor(named: "backgroundColor")
         return view
     }()
 
@@ -35,11 +42,9 @@ class FeedController: UIViewController, Coordinated {
         fatalError("init(coder:) has not been implemented")
     }
 
-//    var ref: DocumentReference? = nil
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundColor")
         title = "Home"
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"), style: .plain, target: self, action: #selector(didTapSignOut(sender:)))
@@ -49,17 +54,9 @@ class FeedController: UIViewController, Coordinated {
             make.edges.equalTo(self.view)
         }
 
-//        let db = Firestore.firestore()
-//        ref = db.collection("users").addDocument(data: [
-//            "post": "Oh hello there, this is my first ever post! 🤭",
-//            "date": Date()
-//        ]) { error in
-//            if let error = error {
-//                print("Error adding document: \(error)")
-//            } else {
-//                print("document was added with ID: \(self.ref!.documentID)")
-//            }
-//        }
+        viewModel.delegate = self
+
+        viewModel.load()
     }
 
     @objc private func didTapSignOut(sender: UIBarButtonItem) {
@@ -77,12 +74,14 @@ class FeedController: UIViewController, Coordinated {
 }
 
 extension FeedController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension FeedController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath) as! FeedCell
         return cell
     }
 
@@ -91,7 +90,19 @@ extension FeedController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return viewModels.count
     }
 }
 
+extension FeedController: FeedViewModelDelegate {
+    func didUpdate(state: FeedViewModel.State) {
+        switch state {
+
+        case .idle: break
+        case .loading: break
+        case .loaded(let models):
+            self.viewModels = models
+        case .error: break
+        }
+    }
+}

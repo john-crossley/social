@@ -10,4 +10,5 @@ import Foundation
 
 class DependencyContainer {
     static let authService: AuthService = FirebaseAuthService()
+    static let feedService: FeedService = FirebaseFeedService()
 }

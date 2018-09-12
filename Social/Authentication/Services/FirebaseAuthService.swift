@@ -10,9 +10,13 @@ import Foundation
 import FirebaseAuth
 
 class FirebaseAuthService: AuthService {
+    var user: User? {
+        guard let user = Auth.auth().currentUser else { return nil }
+        return User(name: user.displayName, email: user.email, password: nil)
+    }
 
     var isAuthenticated: Bool {
-        return Auth.auth().currentUser != nil
+        return self.user != nil
     }
 
     func createAccount(user: User.Auth, callback: @escaping (Result<String>) -> Void) {

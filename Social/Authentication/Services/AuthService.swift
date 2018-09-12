@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum Result<T> {
-    case success(T)
-    case error(String)
-}
-
 protocol AuthService {
 
     typealias CreateAccountCallback = (Result<String>) -> Void
@@ -25,4 +20,5 @@ protocol AuthService {
     func signOut() -> Bool
 
     func signIn(user: User.Auth, callback: SignInCallback?)
+    var user: User? { get }
 }

@@ -24,6 +24,9 @@
 		9A310F8C2142D68E00CF221E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8B2142D68E00CF221E /* User.swift */; };
 		9A310F8E2142D76400CF221E /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */; };
 		9A310F902142D79900CF221E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8F2142D79900CF221E /* DependencyContainer.swift */; };
+		9A79D93721485AB200D49191 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93621485AB200D49191 /* Result.swift */; };
+		9A79D93921485B7D00D49191 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93821485B7D00D49191 /* FeedService.swift */; };
+		9A79D93B21485B8F00D49191 /* FirebaseFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */; };
 		9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970982142A1EE00066E72 /* AppDelegate.swift */; };
 		9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A89709F2142A1EE00066E72 /* Assets.xcassets */; };
 		9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970A12142A1EE00066E72 /* LaunchScreen.storyboard */; };
@@ -88,6 +91,9 @@
 		9A310F8B2142D68E00CF221E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		9A310F8F2142D79900CF221E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		9A79D93621485AB200D49191 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9A79D93821485B7D00D49191 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFeedService.swift; sourceTree = "<group>"; };
 		9A8970952142A1EE00066E72 /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8970982142A1EE00066E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A89709F2142A1EE00066E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -311,6 +317,7 @@
 				9AC09CE32146D8F6004C5314 /* Services */,
 				9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */,
 				9A310F8F2142D79900CF221E /* DependencyContainer.swift */,
+				9A79D93621485AB200D49191 /* Result.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -424,6 +431,8 @@
 			isa = PBXGroup;
 			children = (
 				9A310F862142CADF00CF221E /* FormValidationService.swift */,
+				9A79D93821485B7D00D49191 /* FeedService.swift */,
+				9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -651,6 +660,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Social/Pods-Social-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/GyozaKit/GyozaKit.framework",
@@ -666,6 +676,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GyozaKit.framework",
@@ -695,7 +706,9 @@
 				9A8970C82142A3A600066E72 /* FeedController.swift in Sources */,
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
 				9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */,
+				9A79D93B21485B8F00D49191 /* FirebaseFeedService.swift in Sources */,
 				9A2FF68521480ED200ABD549 /* FeedCell.swift in Sources */,
+				9A79D93721485AB200D49191 /* Result.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
 				9AB7DF9721471A7500EA075C /* Rule.swift in Sources */,
 				9A310F7D2142BBE000CF221E /* MainCoordinator.swift in Sources */,
@@ -706,6 +719,7 @@
 				9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */,
 				9A310F8C2142D68E00CF221E /* User.swift in Sources */,
 				9A310F842142C9E100CF221E /* RegisterViewModel.swift in Sources */,
+				9A79D93921485B7D00D49191 /* FeedService.swift in Sources */,
 				9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */,
 				9A310F782142B87C00CF221E /* UIView+Extensions.swift in Sources */,
 				9AB7DF9B21471A9500EA075C /* MinRule.swift in Sources */,
@@ -886,10 +900,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -906,10 +917,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -927,11 +935,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -950,11 +954,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -972,11 +972,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -994,11 +990,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
