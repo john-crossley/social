@@ -19,7 +19,7 @@ class FeedViewModel {
     weak var delegate: FeedViewModelDelegate?
 
     enum State {
-        case idle, loading, loaded([Feed]), error
+        case idle, loading, loaded([FeedItemViewModel]), error
     }
 
     private var state: State = .idle {
@@ -41,12 +41,18 @@ class FeedViewModel {
 
     func load() {
         self.state = .loading
-        self.feedService.loadFeedItems(for: authService.user!) { result in
-            switch result {
-            case .success(let models):
-                self.state = .loaded(models)
-            case .error(let error):
-                print("🔥 Error=\(error.localizedLowercase)")
+        
+        DispatchQueue(label: "social.background", qos: .userInitiated).async { [unowned self] in
+            self.feedService.loadFeedItems(for: self.authService.user!) { result in
+                switch result {
+                case .success(let models):
+
+                    let viewModels = FeedItemViewModelTransformer.transform(models)
+                    self.state = .loaded(viewModels)
+
+                case .error(let error):
+                    print("🔥 Error=\(error.localizedLowercase)")
+                }
             }
         }
     }

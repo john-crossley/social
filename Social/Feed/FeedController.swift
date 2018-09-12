@@ -17,7 +17,7 @@ class FeedController: UIViewController, Coordinated {
     weak var coordinator: MainCoordinator?
 
     private let viewModel: FeedViewModel
-    private var viewModels: [Feed] = [] {
+    private var viewModels: [FeedItemViewModel] = [] {
         didSet { tableView.reloadData() }
     }
 
@@ -81,7 +81,10 @@ extension FeedController: UITableViewDelegate {
 
 extension FeedController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = viewModels[indexPath.row]
+
         let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath) as! FeedCell
+        cell.bind(to: viewModel)
         return cell
     }
 
@@ -100,8 +103,8 @@ extension FeedController: FeedViewModelDelegate {
 
         case .idle: break
         case .loading: break
-        case .loaded(let models):
-            self.viewModels = models
+        case .loaded(let viewModels):
+            self.viewModels = viewModels
         case .error: break
         }
     }

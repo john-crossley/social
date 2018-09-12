@@ -11,10 +11,6 @@ import Firebase
 import FirebaseFirestore
 import CodableFirebase
 
-struct Feed: Codable {
-    let post: String
-}
-
 class FirebaseFeedService: FeedService {
 
     private lazy var db: Firestore = {

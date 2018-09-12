@@ -24,8 +24,8 @@ class FeedCell: UITableViewCell {
         backgroundColor = UIColor(named: "primaryColor")
     }
 
-    func bind(model: Feed) {
-        self.bodyTextView.text = model.post
+    func bind(to viewModel: FeedItemViewModel) {
+        self.bodyTextView.text = viewModel.post
     }
 
     @IBAction func didTapHeart(sender: UIButton) {
