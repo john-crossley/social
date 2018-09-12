@@ -9,7 +9,7 @@
 import Foundation
 
 class FeedItemViewModelTransformer {
-    static func transform(_ models: [Feed]) -> [FeedItemViewModel] {
+    static func transform(_ models: [FeedItem]) -> [FeedItemViewModel] {
         return models.map { FeedItemViewModel(with: $0) }
     }
 }

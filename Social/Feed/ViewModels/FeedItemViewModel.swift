@@ -10,9 +10,9 @@ import Foundation
 
 struct FeedItemViewModel {
 
-    private let feed: Feed
+    private let feed: FeedItem
 
-    init(with feed: Feed) {
+    init(with feed: FeedItem) {
         self.feed = feed
     }
 

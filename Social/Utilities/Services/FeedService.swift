@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FeedService {
-    func loadFeedItems(for user: User, callback: @escaping (Result<[Feed]>) -> Void)
+    func loadFeedItems(for user: User, callback: @escaping (Result<[FeedItem]>) -> Void)
 }

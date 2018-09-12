@@ -37,7 +37,7 @@
 		9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */; };
 		9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */; };
 		9A9FA96F214936E6008012C2 /* FeedItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */; };
-		9A9FA971214936F2008012C2 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA970214936F2008012C2 /* Feed.swift */; };
+		9A9FA971214936F2008012C2 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA970214936F2008012C2 /* FeedItem.swift */; };
 		9A9FA97421493730008012C2 /* FeedItemViewModelTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA97321493730008012C2 /* FeedItemViewModelTransformer.swift */; };
 		9AB7DF9721471A7500EA075C /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9621471A7500EA075C /* Rule.swift */; };
 		9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9821471A8400EA075C /* MaxRule.swift */; };
@@ -113,7 +113,7 @@
 		9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModel.swift; sourceTree = "<group>"; };
-		9A9FA970214936F2008012C2 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		9A9FA970214936F2008012C2 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		9A9FA97321493730008012C2 /* FeedItemViewModelTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModelTransformer.swift; sourceTree = "<group>"; };
 		9AB7DF9621471A7500EA075C /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		9AB7DF9821471A8400EA075C /* MaxRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRule.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 		9A9FA972214936F9008012C2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9A9FA970214936F2008012C2 /* Feed.swift */,
+				9A9FA970214936F2008012C2 /* FeedItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -738,7 +738,7 @@
 				9A310F8C2142D68E00CF221E /* User.swift in Sources */,
 				9A310F842142C9E100CF221E /* RegisterViewModel.swift in Sources */,
 				9A79D93921485B7D00D49191 /* FeedService.swift in Sources */,
-				9A9FA971214936F2008012C2 /* Feed.swift in Sources */,
+				9A9FA971214936F2008012C2 /* FeedItem.swift in Sources */,
 				9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */,
 				9A310F782142B87C00CF221E /* UIView+Extensions.swift in Sources */,
 				9A9FA97421493730008012C2 /* FeedItemViewModelTransformer.swift in Sources */,

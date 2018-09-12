@@ -23,7 +23,7 @@ class FirebaseFeedService: FeedService {
 
     private lazy var feedRef = db.collection("users")
 
-    func loadFeedItems(for user: User, callback: @escaping (Result<[Feed]>) -> Void) {
+    func loadFeedItems(for user: User, callback: @escaping (Result<[FeedItem]>) -> Void) {
         feedRef.getDocuments { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 callback(.error(""))
@@ -35,7 +35,7 @@ class FirebaseFeedService: FeedService {
                 let decoder = FirebaseDecoder()
 
                 let models = try documents.map { document in
-                    return try decoder.decode(Feed.self, from: document.data())
+                    return try decoder.decode(FeedItem.self, from: document.data())
                 }
 
                 callback(.success(models))
