@@ -24,7 +24,10 @@ class FirebaseFeedService: FeedService {
     private lazy var feedRef = db.collection("users")
 
     func loadFeedItems(for user: User, callback: @escaping (Result<[FeedItem]>) -> Void) {
-        feedRef.getDocuments { (querySnapshot, error) in
+        feedRef.order(by: "date", descending: true)
+            .limit(to: 1000)
+            .getDocuments { (querySnapshot, error) in
+
             guard let documents = querySnapshot?.documents else {
                 callback(.error(""))
                 return

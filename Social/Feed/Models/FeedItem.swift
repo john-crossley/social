@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct Like: Codable {
+    let userId: String
+}
+
 struct FeedItem: Codable {
     let post: String
+    var likes: [Like] = []
 }

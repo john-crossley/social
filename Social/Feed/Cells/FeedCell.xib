@@ -97,6 +97,7 @@ tempor incididunt ut labore et dolore magna aliqua. 🤭</string>
             <connections>
                 <outlet property="bodyTextView" destination="bh3-Xv-hFG" id="gP6-sv-wFB"/>
                 <outlet property="heartButton" destination="Pd2-nD-IKL" id="kdj-na-S7t"/>
+                <outlet property="likeCountLabel" destination="gDU-vK-DwV" id="yHZ-yR-xsK"/>
             </connections>
             <point key="canvasLocation" x="-360.80000000000001" y="255.47226386806599"/>
         </tableViewCell>

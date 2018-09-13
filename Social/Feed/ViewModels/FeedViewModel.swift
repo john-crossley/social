@@ -41,13 +41,16 @@ class FeedViewModel {
 
     func load() {
         self.state = .loading
+
+        guard let user = authService.user else { return }
         
         DispatchQueue(label: "social.background", qos: .userInitiated).async { [unowned self] in
-            self.feedService.loadFeedItems(for: self.authService.user!) { result in
+            self.feedService.loadFeedItems(for: user) { result in
                 switch result {
                 case .success(let models):
 
-                    let viewModels = FeedItemViewModelTransformer.transform(models)
+                    let viewModels = FeedItemViewModelTransformer.transform(models, for: user)
+
                     self.state = .loaded(viewModels)
 
                 case .error(let error):

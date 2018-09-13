@@ -11,12 +11,18 @@ import Foundation
 struct FeedItemViewModel {
 
     private let feed: FeedItem
+    let isLiked: Bool
 
-    init(with feed: FeedItem) {
+    init(with feed: FeedItem, isLiked: Bool) {
         self.feed = feed
+        self.isLiked = isLiked
     }
 
     var post: String {
         return feed.post
+    }
+
+    var numberOfLikes: Int {
+        return self.feed.likes.count
     }
 }

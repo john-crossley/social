@@ -39,6 +39,7 @@
 		9A9FA96F214936E6008012C2 /* FeedItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */; };
 		9A9FA971214936F2008012C2 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA970214936F2008012C2 /* FeedItem.swift */; };
 		9A9FA97421493730008012C2 /* FeedItemViewModelTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA97321493730008012C2 /* FeedItemViewModelTransformer.swift */; };
+		9A9FA97621493A97008012C2 /* FeedServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA97521493A97008012C2 /* FeedServiceTests.swift */; };
 		9AB7DF9721471A7500EA075C /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9621471A7500EA075C /* Rule.swift */; };
 		9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9821471A8400EA075C /* MaxRule.swift */; };
 		9AB7DF9B21471A9500EA075C /* MinRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9A21471A9500EA075C /* MinRule.swift */; };
@@ -115,6 +116,7 @@
 		9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModel.swift; sourceTree = "<group>"; };
 		9A9FA970214936F2008012C2 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		9A9FA97321493730008012C2 /* FeedItemViewModelTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModelTransformer.swift; sourceTree = "<group>"; };
+		9A9FA97521493A97008012C2 /* FeedServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceTests.swift; sourceTree = "<group>"; };
 		9AB7DF9621471A7500EA075C /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		9AB7DF9821471A8400EA075C /* MaxRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRule.swift; sourceTree = "<group>"; };
 		9AB7DF9A21471A9500EA075C /* MinRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinRule.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */,
+				9A9FA97521493A97008012C2 /* FeedServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC09CE92146D925004C5314 /* FormValidationServiceTest.swift in Sources */,
+				9A9FA97621493A97008012C2 /* FeedServiceTests.swift in Sources */,
 				9A8970AE2142A1EE00066E72 /* SocialTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,10 +924,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -940,10 +941,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -961,11 +959,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -984,11 +978,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1006,11 +996,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1028,11 +1014,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

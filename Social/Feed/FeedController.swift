@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import GyozaKit
 
 fileprivate extension String {
     static let feedCellId: String = "FeedCellId"
@@ -20,6 +21,13 @@ class FeedController: UIViewController, Coordinated {
     private var viewModels: [FeedItemViewModel] = [] {
         didSet { tableView.reloadData() }
     }
+
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
+        control.tintColor = UIColor(named: "accentColor")
+        return control
+    }()
 
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
@@ -47,17 +55,31 @@ class FeedController: UIViewController, Coordinated {
         view.backgroundColor = UIColor(named: "backgroundColor")
         title = "Home"
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"), style: .plain, target: self, action: #selector(didTapSignOut(sender:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"),
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(didTapSignOut(sender:)))
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(didTapEdit(sender:)))
 
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(self.view)
         }
 
+        tableView.refreshControl = refreshControl
         viewModel.delegate = self
-
         viewModel.load()
     }
+
+    @objc private func didPullToRefresh(_ sender: UIRefreshControl) {
+        viewModel.load()
+    }
+
+    @objc private func didTapEdit(sender: UIBarButtonItem) {}
 
     @objc private func didTapSignOut(sender: UIBarButtonItem) {
         guard viewModel.signOut else { return }
@@ -104,8 +126,15 @@ extension FeedController: FeedViewModelDelegate {
         case .idle: break
         case .loading: break
         case .loaded(let viewModels):
+            refreshControl.endRefreshing()
             self.viewModels = viewModels
-        case .error: break
+        case .error:
+            let gyoza = Gyoza { builder in
+                builder.pinTo = .top
+                builder.message = "Something went wrong!"
+            }
+
+            gyoza?.show(on: self.view)
         }
     }
 }

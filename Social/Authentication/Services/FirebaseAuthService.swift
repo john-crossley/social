@@ -11,8 +11,9 @@ import FirebaseAuth
 
 class FirebaseAuthService: AuthService {
     var user: User? {
-        guard let user = Auth.auth().currentUser else { return nil }
-        return User(name: user.displayName, email: user.email, password: nil)
+        guard let user = Auth.auth().currentUser,
+            let email = user.email else { return nil }
+        return User(id: user.uid, name: user.displayName, email: email, password: nil)
     }
 
     var isAuthenticated: Bool {

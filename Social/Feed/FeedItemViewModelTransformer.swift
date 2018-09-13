@@ -9,7 +9,16 @@
 import Foundation
 
 class FeedItemViewModelTransformer {
-    static func transform(_ models: [FeedItem]) -> [FeedItemViewModel] {
-        return models.map { FeedItemViewModel(with: $0) }
+    static func transform(_ items: [FeedItem], for user: User) -> [FeedItemViewModel] {
+        return items.map { makeFeedItemViewModel(from: $0, user) }
+    }
+
+    private static func makeFeedItemViewModel(from item: FeedItem, _ user: User) -> FeedItemViewModel {
+        return FeedItemViewModel(with: item,
+                                 isLiked: isLiked(item, userId: user.id))
+    }
+
+    private static func isLiked(_ item: FeedItem, userId: String) -> Bool {
+        return item.likes.contains(where: { $0.userId == userId })
     }
 }
