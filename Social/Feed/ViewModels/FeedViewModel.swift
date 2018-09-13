@@ -39,6 +39,12 @@ class FeedViewModel {
         return authService.signOut()
     }
 
+    func post(body: String, callback: @escaping (Result<String>) -> Void) {
+        feedService.saveFeed(item: FeedItem(post: body, likes: []),
+                             by: authService.user!,
+                             callback: callback)
+    }
+
     func load() {
         self.state = .loading
 

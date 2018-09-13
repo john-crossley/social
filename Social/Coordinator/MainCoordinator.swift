@@ -82,12 +82,21 @@ class MainCoordinator: Coordinator {
         new { return [makeFeedController()] }
     }
 
+    func newFeedItem() {
+        modal { return CreateFeedController(viewModel:
+            FeedViewModel(authService: authService, feedService: feedService)) }
+    }
+
     private func push(block: () -> (UIViewController)) {
         navigationController.pushViewController(block(), animated: true)
     }
 
     private func new(shouldAnimate: Bool = true, block: () -> ([UIViewController])) {
         navigationController.setViewControllers(block(), animated: shouldAnimate)
+    }
+
+    private func modal(block: () -> (UIViewController)) {
+        navigationController.present(block(), animated: true, completion: nil)
     }
 
     private func makeRegisterController() -> CoordinatedViewController {

@@ -47,29 +47,19 @@ class FirebaseFeedService: FeedService {
                 callback(.error(error.localizedDescription))
             }
         }
+    }
 
-
-//        db.collection("users").getDocuments(completion: { (querySnapshot, error) in
-//            guard let documents = querySnapshot?.documents else { return }
-//
-//            do {
-//                let models = try FirebaseDecoder().decode([Document].self, from: querySnapshot)
-//
-//                print(models)
-//            } catch let erorr {
-//                print(">>> i fucking errorrerrred \(error?.localizedDescription)")
-//            }
-//
-//        })
-        //        ref = db.collection("users").addDocument(data: [
-        //            "post": "Oh hello there, this is my first ever post! 🤭",
-        //            "date": Date()
-        //        ]) { error in
-        //            if let error = error {
-        //                print("Error adding document: \(error)")
-        //            } else {
-        //                print("document was added with ID: \(self.ref!.documentID)")
-        //            }
-        //        }
+    func saveFeed(item: FeedItem, by user: User, callback: @escaping (Result<String>) -> Void) {
+        feedRef.addDocument(data: [
+            "date": Date(),
+            "post": item.post,
+            "likes": item.likes
+        ]) { error in
+            if let error = error {
+                callback(.error(error.localizedDescription))
+            } else {
+                callback(.success("Document was successfully saved!"))
+            }
+        }
     }
 }

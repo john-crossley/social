@@ -72,6 +72,11 @@ class FeedController: UIViewController, Coordinated {
 
         tableView.refreshControl = refreshControl
         viewModel.delegate = self
+//        viewModel.load()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.load()
     }
 
@@ -79,7 +84,9 @@ class FeedController: UIViewController, Coordinated {
         viewModel.load()
     }
 
-    @objc private func didTapEdit(sender: UIBarButtonItem) {}
+    @objc private func didTapEdit(sender: UIBarButtonItem) {
+        coordinator?.newFeedItem()
+    }
 
     @objc private func didTapSignOut(sender: UIBarButtonItem) {
         guard viewModel.signOut else { return }

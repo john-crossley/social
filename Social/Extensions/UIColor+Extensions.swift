@@ -10,4 +10,5 @@ import UIKit
 
 extension UIColor {
     static let accentColor: UIColor = UIColor(named: "accentColor") ?? .red
+    static let secondaryTextColor: UIColor = UIColor(named: "secondaryTextColor") ?? .lightGray
 }
