@@ -83,8 +83,15 @@ class MainCoordinator: Coordinator {
     }
 
     func newFeedItem() {
-        modal { return CreateFeedController(viewModel:
-            FeedViewModel(authService: authService, feedService: feedService)) }
+        modal {
+            let viewModel = FeedViewModel(authService: authService, feedService: feedService)
+            viewModel.coordinator = self
+            return CreateFeedController(viewModel: viewModel)
+        }
+    }
+
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 
     private func push(block: () -> (UIViewController)) {

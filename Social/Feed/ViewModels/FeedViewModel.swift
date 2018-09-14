@@ -13,6 +13,8 @@ protocol FeedViewModelDelegate: class {
 }
 
 class FeedViewModel {
+    weak var coordinator: MainCoordinator?
+
     private let authService: AuthService
     private let feedService: FeedService
 
@@ -39,10 +41,11 @@ class FeedViewModel {
         return authService.signOut()
     }
 
-    func post(body: String, callback: @escaping (Result<String>) -> Void) {
+    func post(body: String) {
         feedService.saveFeed(item: FeedItem(post: body, likes: []),
-                             by: authService.user!,
-                             callback: callback)
+                             by: authService.user!, callback: { result in
+            self.coordinator?.dismiss()
+        })
     }
 
     func load() {

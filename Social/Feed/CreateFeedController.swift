@@ -32,13 +32,14 @@ class CreateFeedController: UIViewController {
     }
 
     @IBAction func didTapSubmit(sender: UIButton) {
-        viewModel.post(body: bodyTextField.text, callback: { [unowned self] result in
-            switch result {
-            case .success:
-                self.dismiss(animated: true, completion: nil)
-            case .error:
-                break
-            }
-        })
+        viewModel.post(body: bodyTextField.text)
+//        viewModel.post(body: bodyTextField.text, callback: { [unowned self] result in
+//            switch result {
+//            case .success:
+//                self.dismiss(animated: true, completion: nil)
+//            case .error:
+//                break
+//            }
+//        })
     }
 }
