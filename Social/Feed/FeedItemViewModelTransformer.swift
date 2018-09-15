@@ -15,7 +15,9 @@ class FeedItemViewModelTransformer {
 
     private static func makeFeedItemViewModel(from item: FeedItem, _ user: User) -> FeedItemViewModel {
         return FeedItemViewModel(with: item,
-                                 isLiked: isLiked(item, userId: user.id))
+                                 isLiked: isLiked(item, userId: user.id),
+                                 author: item.author,
+                                 doesOwnItem: user.id == item.author.userId)
     }
 
     private static func isLiked(_ item: FeedItem, userId: String) -> Bool {

@@ -37,10 +37,10 @@ class RegisterViewModel {
         self.authService = service
     }
 
-    func register(with email: String, and password: String) {
+    func register(with name: String, email: String, and password: String) {
         self.state = .loading
 
-        self.authService.createAccount(user: User.Auth(email: email, password: password)) { result in
+        self.authService.createAccount(user: User.Auth(name: name, email: email, password: password)) { result in
             switch result {
             case .success(let message):
                 self.state = .loaded(message)

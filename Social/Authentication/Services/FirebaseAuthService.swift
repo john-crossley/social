@@ -24,6 +24,10 @@ class FirebaseAuthService: AuthService {
 
         Auth.auth().createUser(withEmail: user.email, password: user.password) { (result, error) in
 
+            let changeRequest = result?.user.createProfileChangeRequest()
+            changeRequest?.displayName = user.name
+            changeRequest?.commitChanges(completion: nil)
+
             if let error = error {
                 callback(.error(error.localizedDescription))
                 return

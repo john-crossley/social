@@ -31,20 +31,20 @@ tempor incididunt ut labore et dolore magna aliqua. 🤭</string>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-Q4-cdp" userLabel="Meta">
                         <rect key="frame" x="16" y="11" width="343" height="20"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="@jonnothebonno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bT-K3-X3z">
-                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="John Crossley" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bT-K3-X3z">
+                                <rect key="frame" x="0.0" y="0.0" width="94" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" name="accentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="· 1h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72Q-lj-Op1">
-                                <rect key="frame" x="116.5" y="0.0" width="23" height="20"/>
+                                <rect key="frame" x="98" y="0.0" width="23" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" name="secondaryTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="it4-mu-FeU">
-                                <rect key="frame" x="143.5" y="0.0" width="175.5" height="20"/>
+                                <rect key="frame" x="125" y="0.0" width="194" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYX-w7-DZt">
@@ -113,6 +113,8 @@ tempor incididunt ut labore et dolore magna aliqua. 🤭</string>
             <connections>
                 <outlet property="bodyTextView" destination="bh3-Xv-hFG" id="gP6-sv-wFB"/>
                 <outlet property="heartButton" destination="Pd2-nD-IKL" id="kdj-na-S7t"/>
+                <outlet property="nameLabel" destination="2bT-K3-X3z" id="Bzs-j1-kf2"/>
+                <outlet property="optionsButton" destination="KYX-w7-DZt" id="mWl-xB-3ce"/>
             </connections>
             <point key="canvasLocation" x="-360.80000000000001" y="255.47226386806599"/>
         </tableViewCell>

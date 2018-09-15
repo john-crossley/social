@@ -12,7 +12,13 @@ struct Like: Codable {
     let userId: String
 }
 
+struct Author: Codable {
+    let userId: String
+    let name: String
+}
+
 struct FeedItem: Codable {
     let post: String
     var likes: [Like] = []
+    let author: Author
 }

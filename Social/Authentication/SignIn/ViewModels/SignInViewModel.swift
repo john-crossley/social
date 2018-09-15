@@ -35,7 +35,7 @@ class SignInViewModel {
 
     func signIn(with email: String, and password: String) {
         self.state = .loading
-        authService.signIn(user: User.Auth(email: email, password: password)) { result in
+        authService.signIn(user: User.Auth(with: email, and: password)) { result in
             switch result {
             case .success(let message):
                 self.state = .loaded(message)

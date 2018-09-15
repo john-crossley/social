@@ -17,15 +17,15 @@ class FeedCell: UITableViewCell {
 
     @IBOutlet private var heartButton: UIButton!
     @IBOutlet private var bodyTextView: UITextView!
+    @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var likeCountLabel: UILabel!
+    @IBOutlet private var optionsButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         bodyTextView.textContainer.lineFragmentPadding = 0
         bodyTextView.textContainerInset = .zero
-
         heartButton.imageView?.contentMode = .scaleAspectFit
-
         backgroundColor = UIColor(named: "primaryColor")
     }
 
@@ -33,13 +33,15 @@ class FeedCell: UITableViewCell {
         self.viewModel = viewModel
 
         bodyTextView.text = viewModel.post
-//        likeCountLabel.text = "\(viewModel.numberOfLikes)"
+        nameLabel.text = viewModel.author.name
 
         if viewModel.isLiked {
             setHeart(to: .full)
         } else {
             setHeart(to: .empty)
         }
+
+        optionsButton.isHidden = !viewModel.doesOwnItem
     }
 
     enum Heart: String {

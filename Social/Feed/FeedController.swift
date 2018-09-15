@@ -25,7 +25,7 @@ class FeedController: UIViewController, Coordinated {
     private lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
         control.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
-        control.tintColor = UIColor(named: "accentColor")
+        control.tintColor = .accentColor
         return control
     }()
 
@@ -72,7 +72,6 @@ class FeedController: UIViewController, Coordinated {
 
         tableView.refreshControl = refreshControl
         viewModel.delegate = self
-//        viewModel.load()
     }
 
     override func viewDidAppear(_ animated: Bool) {

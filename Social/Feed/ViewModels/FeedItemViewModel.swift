@@ -12,10 +12,14 @@ struct FeedItemViewModel {
 
     private let feed: FeedItem
     let isLiked: Bool
+    let author: Author
+    let doesOwnItem: Bool
 
-    init(with feed: FeedItem, isLiked: Bool) {
+    init(with feed: FeedItem, isLiked: Bool, author: Author, doesOwnItem: Bool) {
         self.feed = feed
         self.isLiked = isLiked
+        self.author = author
+        self.doesOwnItem = doesOwnItem
     }
 
     var post: String {

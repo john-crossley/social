@@ -75,9 +75,10 @@ class RegisterController: UIViewController, Coordinated {
 
     @IBAction func didTapRegister(sender: SocialButton) {
         view.endEditing(true)
-        guard let email = emailTextField.text,
+        guard let name = nameTextField.text,
+            let email = emailTextField.text,
             let password = passwordTextField.text else { return }
-        viewModel.register(with: email, and: password)
+        viewModel.register(with: name, email: email, and: password)
     }
 }
 

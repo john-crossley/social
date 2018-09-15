@@ -34,9 +34,7 @@ class FirebaseFeedService: FeedService {
             }
 
             do {
-
                 let decoder = FirebaseDecoder()
-
                 let models = try documents.map { document in
                     return try decoder.decode(FeedItem.self, from: document.data())
                 }
@@ -53,7 +51,11 @@ class FirebaseFeedService: FeedService {
         feedRef.addDocument(data: [
             "date": Date(),
             "post": item.post,
-            "likes": item.likes
+            "likes": item.likes,
+            "author": [
+                "userId": item.author.userId,
+                "name": item.author.name
+            ]
         ]) { error in
             if let error = error {
                 callback(.error(error.localizedDescription))
