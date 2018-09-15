@@ -21,7 +21,7 @@ class FeedViewModel {
     weak var delegate: FeedViewModelDelegate?
 
     enum State {
-        case idle, loading, loaded([FeedItemViewModel]), error
+        case idle, loading, loaded([FeedItemViewModel]), error(String)
     }
 
     private var state: State = .idle {
@@ -70,8 +70,9 @@ class FeedViewModel {
 
                     self.state = .loaded(viewModels)
 
-                case .error(let error):
-                    print("🔥 Error=\(error.localizedLowercase)")
+                case .error(let reason):
+                    print("🔥 Error=\(reason.localizedLowercase)")
+                    self.state = .error(reason)
                 }
             }
         }

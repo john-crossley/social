@@ -24,6 +24,11 @@
 		9A310F8C2142D68E00CF221E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8B2142D68E00CF221E /* User.swift */; };
 		9A310F8E2142D76400CF221E /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */; };
 		9A310F902142D79900CF221E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F8F2142D79900CF221E /* DependencyContainer.swift */; };
+		9A326CF1214D407F00DFCA96 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF0214D407F00DFCA96 /* FeedViewModelTests.swift */; };
+		9A326CF4214D5AC700DFCA96 /* MockFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF3214D5AC700DFCA96 /* MockFeedService.swift */; };
+		9A326CF6214D5ADE00DFCA96 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF5214D5ADE00DFCA96 /* MockAuthService.swift */; };
+		9A326CF8214D63FD00DFCA96 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF7214D63FD00DFCA96 /* MockCoordinator.swift */; };
+		9A326CFA214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF9214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift */; };
 		9A79D93721485AB200D49191 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93621485AB200D49191 /* Result.swift */; };
 		9A79D93921485B7D00D49191 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93821485B7D00D49191 /* FeedService.swift */; };
 		9A79D93B21485B8F00D49191 /* FirebaseFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */; };
@@ -41,7 +46,6 @@
 		9A9FA96F214936E6008012C2 /* FeedItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */; };
 		9A9FA971214936F2008012C2 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA970214936F2008012C2 /* FeedItem.swift */; };
 		9A9FA97421493730008012C2 /* FeedItemViewModelTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA97321493730008012C2 /* FeedItemViewModelTransformer.swift */; };
-		9A9FA97621493A97008012C2 /* FeedServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA97521493A97008012C2 /* FeedServiceTests.swift */; };
 		9AB7DF9721471A7500EA075C /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9621471A7500EA075C /* Rule.swift */; };
 		9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9821471A8400EA075C /* MaxRule.swift */; };
 		9AB7DF9B21471A9500EA075C /* MinRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7DF9A21471A9500EA075C /* MinRule.swift */; };
@@ -97,6 +101,11 @@
 		9A310F8B2142D68E00CF221E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A310F8D2142D76400CF221E /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		9A310F8F2142D79900CF221E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		9A326CF0214D407F00DFCA96 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		9A326CF3214D5AC700DFCA96 /* MockFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeedService.swift; sourceTree = "<group>"; };
+		9A326CF5214D5ADE00DFCA96 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
+		9A326CF7214D63FD00DFCA96 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		9A326CF9214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModelTransformerTests.swift; sourceTree = "<group>"; };
 		9A79D93621485AB200D49191 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9A79D93821485B7D00D49191 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFeedService.swift; sourceTree = "<group>"; };
@@ -120,7 +129,6 @@
 		9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModel.swift; sourceTree = "<group>"; };
 		9A9FA970214936F2008012C2 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		9A9FA97321493730008012C2 /* FeedItemViewModelTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModelTransformer.swift; sourceTree = "<group>"; };
-		9A9FA97521493A97008012C2 /* FeedServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceTests.swift; sourceTree = "<group>"; };
 		9AB7DF9621471A7500EA075C /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		9AB7DF9821471A8400EA075C /* MaxRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRule.swift; sourceTree = "<group>"; };
 		9AB7DF9A21471A9500EA075C /* MinRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinRule.swift; sourceTree = "<group>"; };
@@ -253,6 +261,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		9A326CEE214D405600DFCA96 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				9A326CF2214D5AB700DFCA96 /* Mocks */,
+				9A326CEF214D405F00DFCA96 /* ViewModels */,
+				9A326CF9214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		9A326CEF214D405F00DFCA96 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9A326CF0214D407F00DFCA96 /* FeedViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9A326CF2214D5AB700DFCA96 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9A326CF3214D5AC700DFCA96 /* MockFeedService.swift */,
+				9A326CF5214D5ADE00DFCA96 /* MockAuthService.swift */,
+				9A326CF7214D63FD00DFCA96 /* MockCoordinator.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		9A89708C2142A1EE00066E72 = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +332,7 @@
 		9A8970AC2142A1EE00066E72 /* SocialTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A326CEE214D405600DFCA96 /* Feed */,
 				9AC09CE62146D912004C5314 /* Utilities */,
 				9A8970AD2142A1EE00066E72 /* SocialTests.swift */,
 				9A8970AF2142A1EE00066E72 /* Info.plist */,
@@ -474,7 +511,6 @@
 			isa = PBXGroup;
 			children = (
 				9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */,
-				9A9FA97521493A97008012C2 /* FeedServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -766,9 +802,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A326CF6214D5ADE00DFCA96 /* MockAuthService.swift in Sources */,
 				9AC09CE92146D925004C5314 /* FormValidationServiceTest.swift in Sources */,
-				9A9FA97621493A97008012C2 /* FeedServiceTests.swift in Sources */,
+				9A326CFA214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift in Sources */,
+				9A326CF8214D63FD00DFCA96 /* MockCoordinator.swift in Sources */,
 				9A8970AE2142A1EE00066E72 /* SocialTests.swift in Sources */,
+				9A326CF1214D407F00DFCA96 /* FeedViewModelTests.swift in Sources */,
+				9A326CF4214D5AC700DFCA96 /* MockFeedService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
