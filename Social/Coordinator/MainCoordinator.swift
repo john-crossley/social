@@ -42,9 +42,14 @@ class MainCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
 
-    func auth() {
-        push {
-            return makeRegisterController()
+    func auth(_ style: PresentationStyle) {
+        let controller = AuthController()
+        controller.coordinator = self
+
+        if style == .new {
+            new { [controller] }
+        } else if style == .push {
+            push { controller }
         }
     }
 
@@ -72,10 +77,6 @@ class MainCoordinator: Coordinator {
             controller.coordinator = self
             return controller
         }
-    }
-
-    func presentAuth() {
-        new { return [makeRegisterController()] }
     }
 
     func feed() {

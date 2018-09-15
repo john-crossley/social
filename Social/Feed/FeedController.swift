@@ -92,7 +92,7 @@ class FeedController: UIViewController, Coordinated {
 
         let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         controller.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
-            self.coordinator?.signIn(.new)
+            self.coordinator?.auth(.new)
         }))
 
         controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
