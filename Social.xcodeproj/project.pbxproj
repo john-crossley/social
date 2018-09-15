@@ -29,6 +29,7 @@
 		9A326CF6214D5ADE00DFCA96 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF5214D5ADE00DFCA96 /* MockAuthService.swift */; };
 		9A326CF8214D63FD00DFCA96 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF7214D63FD00DFCA96 /* MockCoordinator.swift */; };
 		9A326CFA214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CF9214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift */; };
+		9A326CFD214D9AED00DFCA96 /* MainCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A326CFC214D9AED00DFCA96 /* MainCoordinatorTests.swift */; };
 		9A79D93721485AB200D49191 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93621485AB200D49191 /* Result.swift */; };
 		9A79D93921485B7D00D49191 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93821485B7D00D49191 /* FeedService.swift */; };
 		9A79D93B21485B8F00D49191 /* FirebaseFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */; };
@@ -106,6 +107,7 @@
 		9A326CF5214D5ADE00DFCA96 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
 		9A326CF7214D63FD00DFCA96 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		9A326CF9214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModelTransformerTests.swift; sourceTree = "<group>"; };
+		9A326CFC214D9AED00DFCA96 /* MainCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorTests.swift; sourceTree = "<group>"; };
 		9A79D93621485AB200D49191 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9A79D93821485B7D00D49191 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		9A79D93A21485B8F00D49191 /* FirebaseFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFeedService.swift; sourceTree = "<group>"; };
@@ -289,6 +291,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		9A326CFB214D9ADC00DFCA96 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9A326CFC214D9AED00DFCA96 /* MainCoordinatorTests.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		9A89708C2142A1EE00066E72 = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		9A8970AC2142A1EE00066E72 /* SocialTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A326CFB214D9ADC00DFCA96 /* Coordinator */,
 				9A326CEE214D405600DFCA96 /* Feed */,
 				9AC09CE62146D912004C5314 /* Utilities */,
 				9A8970AD2142A1EE00066E72 /* SocialTests.swift */,
@@ -803,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A326CF6214D5ADE00DFCA96 /* MockAuthService.swift in Sources */,
+				9A326CFD214D9AED00DFCA96 /* MainCoordinatorTests.swift in Sources */,
 				9AC09CE92146D925004C5314 /* FormValidationServiceTest.swift in Sources */,
 				9A326CFA214D938000DFCA96 /* FeedItemViewModelTransformerTests.swift in Sources */,
 				9A326CF8214D63FD00DFCA96 /* MockCoordinator.swift in Sources */,

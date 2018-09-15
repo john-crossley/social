@@ -11,16 +11,24 @@ import UIKit
 class MainCoordinator: Coordinator {
     typealias CoordinatedViewController = UIViewController & Coordinated
 
+    enum PresentationStyle {
+        case new
+        case push
+    }
+
     private let window: UIWindow
     private let authService: AuthService
     private let feedService: FeedService
     let navigationController: UINavigationController
 
-    init(window: UIWindow, authService: AuthService, feedService: FeedService) {
+    init(window: UIWindow,
+         authService: AuthService,
+         feedService: FeedService,
+         navigationController: UINavigationController = UINavigationController()) {
         self.window = window
         self.authService = authService
         self.feedService = feedService
-        self.navigationController = UINavigationController()
+        self.navigationController = navigationController
         navigationController.pushViewController(makeRootController(), animated: true)
     }
 
@@ -30,7 +38,7 @@ class MainCoordinator: Coordinator {
         if authService.isAuthenticated {
             controller = makeFeedController()
         } else {
-            controller = AuthController()
+            controller = makeAuthController()
         }
 
         controller.coordinator = self
@@ -43,19 +51,13 @@ class MainCoordinator: Coordinator {
     }
 
     func auth(_ style: PresentationStyle) {
-        let controller = AuthController()
-        controller.coordinator = self
+        let controller = makeAuthController()
 
         if style == .new {
             new { [controller] }
         } else if style == .push {
             push { controller }
         }
-    }
-
-    enum PresentationStyle {
-        case new
-        case push
     }
 
     func signIn(_ style: PresentationStyle) {
@@ -102,6 +104,12 @@ class MainCoordinator: Coordinator {
         navigationController.dismiss(animated: true, completion: nil)
     }
 
+    private func makeAuthController() -> CoordinatedViewController {
+        let controller = AuthController()
+        controller.coordinator = self
+        return controller
+    }
+
     private func push(block: () -> (UIViewController)) {
         navigationController.pushViewController(block(), animated: true)
     }
@@ -112,13 +120,6 @@ class MainCoordinator: Coordinator {
 
     private func modal(block: () -> (UIViewController)) {
         navigationController.present(block(), animated: true, completion: nil)
-    }
-
-    private func makeRegisterController() -> CoordinatedViewController {
-        let viewModel = RegisterViewModel(service: DependencyContainer.authService)
-        let controller = RegisterController(with: viewModel, validationService: FormValidationService())
-        controller.coordinator = self
-        return controller
     }
 
     private func makeFeedController() -> CoordinatedViewController {
