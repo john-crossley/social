@@ -9,6 +9,8 @@
 import UIKit
 
 class FeedCell: UITableViewCell {
+    weak var coordinator: MainCoordinator?
+
     private var viewModel: FeedItemViewModel?
 
     private let generator = UIImpactFeedbackGenerator(style: .light)
@@ -31,7 +33,7 @@ class FeedCell: UITableViewCell {
         self.viewModel = viewModel
 
         bodyTextView.text = viewModel.post
-        likeCountLabel.text = "\(viewModel.numberOfLikes)"
+//        likeCountLabel.text = "\(viewModel.numberOfLikes)"
 
         if viewModel.isLiked {
             setHeart(to: .full)
@@ -47,6 +49,10 @@ class FeedCell: UITableViewCell {
 
     private func setHeart(to heart: Heart) {
         heartButton.setImage(UIImage(named: heart.rawValue), for: .normal)
+    }
+
+    @IBAction func didTapMore(sender: UIButton) {
+        coordinator?.moreOptions()
     }
 
     @IBAction func didTapHeart(sender: UIButton) {

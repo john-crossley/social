@@ -91,7 +91,7 @@ class FeedController: UIViewController, Coordinated {
     @objc private func didTapSignOut(sender: UIBarButtonItem) {
         guard viewModel.signOut else { return }
 
-        let controller = UIAlertController(title: "Account Options", message: nil, preferredStyle: .actionSheet)
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         controller.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
             self.coordinator?.signIn(.new)
         }))
@@ -113,6 +113,7 @@ extension FeedController: UITableViewDataSource {
         let viewModel = viewModels[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath) as! FeedCell
+        cell.coordinator = coordinator
         cell.bind(to: viewModel)
         return cell
     }

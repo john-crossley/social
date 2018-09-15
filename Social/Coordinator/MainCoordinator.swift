@@ -90,6 +90,13 @@ class MainCoordinator: Coordinator {
         }
     }
 
+    func moreOptions() {
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        controller.addAction(UIAlertAction(title: "Delete Item", style: .destructive, handler: nil))
+        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        navigationController.present(controller, animated: true, completion: nil)
+    }
+
     func dismiss() {
         navigationController.dismiss(animated: true, completion: nil)
     }

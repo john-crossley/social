@@ -42,9 +42,13 @@ class FeedViewModel {
     }
 
     func post(body: String) {
-        feedService.saveFeed(item: FeedItem(post: body, likes: []),
-                             by: authService.user!, callback: { result in
-            self.coordinator?.dismiss()
+        feedService.saveFeed(item: FeedItem(post: body, likes: []), by: authService.user!, callback: { result in
+                switch result {
+                case .success:
+                    self.coordinator?.dismiss()
+                case .error: break
+//                    error
+            }
         })
     }
 
