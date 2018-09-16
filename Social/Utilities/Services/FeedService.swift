@@ -11,4 +11,5 @@ import Foundation
 protocol FeedService {
     func loadFeedItems(for user: User, callback: @escaping (Result<[FeedItem]>) -> Void)
     func saveFeed(item: FeedItem, by user: User, callback: @escaping (Result<String>) -> Void)
+    func removeItem(by id: String, callback: @escaping (Result<String>) -> Void)
 }

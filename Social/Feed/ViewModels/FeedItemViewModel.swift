@@ -15,6 +15,10 @@ struct FeedItemViewModel {
     let author: Author
     let doesOwnItem: Bool
 
+    var itemId: String? {
+        return feed.id
+    }
+
     init(with feed: FeedItem, isLiked: Bool, author: Author, doesOwnItem: Bool) {
         self.feed = feed
         self.isLiked = isLiked

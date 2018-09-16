@@ -44,7 +44,7 @@ class FeedViewModel {
     func post(body: String) {
         guard let user = authService.user else { return }
 
-        let item = FeedItem(post: body, likes: [], author: user.author)
+        let item = FeedItem(post: body, likes: [], author: user.author, id: nil)
 
         feedService.saveFeed(item: item, by: authService.user!, callback: { result in
                 switch result {
@@ -74,6 +74,18 @@ class FeedViewModel {
                     print("🔥 Error=\(reason.localizedLowercase)")
                     self.state = .error(reason)
                 }
+            }
+        }
+    }
+
+    func removeItem(by itemId: String) {
+        self.state = .loading
+
+        self.feedService.removeItem(by: itemId) { result in
+            switch result {
+            case .success: self.load()
+            case .error(let reason):
+                self.state = .error(reason)
             }
         }
     }

@@ -8,8 +8,12 @@
 
 import UIKit
 
+protocol FeedCellDelegate: class {
+    func didTapOptions(for itemId: String)
+}
+
 class FeedCell: UITableViewCell {
-    weak var coordinator: MainCoordinator?
+    weak var delegate: FeedCellDelegate?
 
     private var viewModel: FeedItemViewModel?
 
@@ -54,7 +58,8 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func didTapMore(sender: UIButton) {
-        coordinator?.moreOptions()
+        guard let itemId = viewModel?.itemId else { return }
+        delegate?.didTapOptions(for: itemId)
     }
 
     @IBAction func didTapHeart(sender: UIButton) {

@@ -93,10 +93,14 @@ class MainCoordinator: Coordinator {
         }
     }
 
-    func moreOptions() {
+    enum Choice {
+        case delete, cancel
+    }
+
+    func moreOptions(for itemId: String, choice: @escaping (Choice) -> Void) {
         let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        controller.addAction(UIAlertAction(title: "Delete Item", style: .destructive, handler: nil))
-        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        controller.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in choice(.delete) }))
+        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in choice(.cancel) }))
         navigationController.present(controller, animated: true, completion: nil)
     }
 

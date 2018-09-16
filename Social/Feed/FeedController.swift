@@ -112,8 +112,8 @@ extension FeedController: UITableViewDataSource {
         let viewModel = viewModels[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath) as! FeedCell
-        cell.coordinator = coordinator
         cell.bind(to: viewModel)
+        cell.delegate = self
         return cell
     }
 
@@ -142,6 +142,20 @@ extension FeedController: FeedViewModelDelegate {
             }
 
             gyoza?.show(on: self.view)
+        }
+    }
+}
+
+extension FeedController: FeedCellDelegate {
+    func didTapOptions(for itemId: String) {
+        coordinator?.moreOptions(for: itemId) { choice in
+            switch choice {
+            case .delete:
+                self.viewModel.removeItem(by: itemId)
+                break
+            case .cancel:
+                break
+            }
         }
     }
 }

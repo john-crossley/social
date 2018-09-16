@@ -21,4 +21,6 @@ struct FeedItem: Codable {
     let post: String
     var likes: [Like] = []
     let author: Author
+
+    var id: String?
 }

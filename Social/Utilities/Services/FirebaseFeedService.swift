@@ -35,8 +35,10 @@ class FirebaseFeedService: FeedService {
 
             do {
                 let decoder = FirebaseDecoder()
-                let models = try documents.map { document in
-                    return try decoder.decode(FeedItem.self, from: document.data())
+                let models: [FeedItem] = try documents.map { document in
+                    var item = try decoder.decode(FeedItem.self, from: document.data())
+                    item.id = document.reference.documentID
+                    return item
                 }
 
                 callback(.success(models))
@@ -62,6 +64,17 @@ class FirebaseFeedService: FeedService {
             } else {
                 callback(.success("Document was successfully saved!"))
             }
+        }
+    }
+
+    func removeItem(by id: String, callback: @escaping (Result<String>) -> Void) {
+        feedRef.document(id).delete { (error) in
+            if let error = error {
+                callback(.error(error.localizedDescription))
+                return
+            }
+
+            callback(.success("done"))
         }
     }
 }
