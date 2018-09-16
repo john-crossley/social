@@ -24,7 +24,7 @@ class FirebaseFeedService: FeedService {
     private lazy var feedRef = db.collection("users")
 
     func loadFeedItems(for user: User, callback: @escaping (Result<[FeedItem]>) -> Void) {
-        feedRef.order(by: "date", descending: true)
+        feedRef.order(by: "timestamp", descending: true)
             .limit(to: 1000)
             .getDocuments { (querySnapshot, error) in
 
@@ -51,7 +51,7 @@ class FirebaseFeedService: FeedService {
 
     func saveFeed(item: FeedItem, by user: User, callback: @escaping (Result<String>) -> Void) {
         feedRef.addDocument(data: [
-            "date": Date(),
+            "timestamp": item.timestamp ?? Date().timestamp,
             "post": item.post,
             "likes": item.likes,
             "author": [

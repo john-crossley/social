@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DateToolsSwift
 
 struct FeedItemViewModel {
 
@@ -32,5 +33,12 @@ struct FeedItemViewModel {
 
     var numberOfLikes: Int {
         return self.feed.likes.count
+    }
+
+    var timeSince: String {
+        guard let timestamp = feed.timestamp else { return "" }
+        let date = Date(timeIntervalSince1970: timestamp)
+
+        return date.shortTimeAgoSinceNow
     }
 }

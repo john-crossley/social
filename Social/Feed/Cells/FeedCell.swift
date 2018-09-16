@@ -50,6 +50,7 @@ class FeedCell: UICollectionViewCell {
 
         bodyTextView.text = viewModel.post
         nameLabel.text = viewModel.author.name
+        dateTimeLabel.text = viewModel.timeSince
 
 //        if viewModel.isLiked {
 //            setHeart(to: .full)

@@ -12,6 +12,7 @@ target 'Social' do
   pod 'CodableFirebase'
   pod 'GyozaKit'
   pod 'SnapKit'
+  pod 'DateToolsSwift'
 
   target 'SocialTests' do
     inherit! :search_paths

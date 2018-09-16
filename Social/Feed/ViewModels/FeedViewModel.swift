@@ -44,7 +44,7 @@ class FeedViewModel {
     func post(body: String) {
         guard let user = authService.user else { return }
 
-        let item = FeedItem(post: body, likes: [], author: user.author, id: nil)
+        let item = FeedItem(post: body, author: user.author)
 
         feedService.saveFeed(item: item, by: authService.user!, callback: { result in
                 switch result {

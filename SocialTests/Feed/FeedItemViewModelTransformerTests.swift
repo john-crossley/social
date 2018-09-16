@@ -16,7 +16,7 @@ class FeedItemViewModelTransformerTests: XCTestCase {
         let loggedInAs = User(id: "123", name: "Mr Henry the Akita", email: "henry.akita@mail.com", password: "password")
         let authorOfPost = Author(userId: "user123", name: "Mai-Yee")
 
-        let item = FeedItem(post: "This is a post!", likes: [], author: authorOfPost)
+        let item = FeedItem(post: "This is a post!", author: authorOfPost)
         let viewModels = FeedItemViewModelTransformer.transform([item], for: loggedInAs)
 
         let first = viewModels.first!
@@ -30,7 +30,7 @@ class FeedItemViewModelTransformerTests: XCTestCase {
         let loggedInAs = User(id: "abc", name: "Hayao Miyazaki", email: "hayao.miyazaki@ghibli.com", password: "password")
         let authorOfPost = Author(userId: "abc", name: "Hayao Miyazaki")
 
-        let item = FeedItem(post: "Grave of the fireflies is so sad 😔", likes: [], author: authorOfPost)
+        let item = FeedItem(post: "Grave of the fireflies is so sad 😔", author: authorOfPost)
         let viewModels = FeedItemViewModelTransformer.transform([item], for: loggedInAs)
 
         let first = viewModels.first!

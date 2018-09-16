@@ -23,4 +23,18 @@ struct FeedItem: Codable {
     let author: Author
 
     var id: String?
+    var timestamp: Double?
+
+    init(post: String, author: Author) {
+        self.post = post
+        self.likes = [Like]()
+        self.author = author
+        self.id = nil
+        self.timestamp = Date().timestamp
+    }
+
+    init(post: String, likes: [Like], author: Author) {
+        self.init(post: post, author: author)
+        self.likes = likes
+    }
 }
