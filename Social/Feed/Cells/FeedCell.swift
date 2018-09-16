@@ -12,25 +12,26 @@ protocol FeedCellDelegate: class {
     func didTapOptions(for itemId: String)
 }
 
-class FeedCell: UITableViewCell {
+class FeedCell: UICollectionViewCell {
     weak var delegate: FeedCellDelegate?
 
     private var viewModel: FeedItemViewModel?
 
     private let generator = UIImpactFeedbackGenerator(style: .light)
 
-    @IBOutlet private var heartButton: UIButton!
+//    @IBOutlet private var heartButton: UIButton!
     @IBOutlet private var bodyTextView: UITextView!
     @IBOutlet private var nameLabel: UILabel!
-    @IBOutlet private var likeCountLabel: UILabel!
-    @IBOutlet private var optionsButton: UIButton!
+//    @IBOutlet private var likeCountLabel: UILabel!
+//    @IBOutlet private var optionsButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         bodyTextView.textContainer.lineFragmentPadding = 0
         bodyTextView.textContainerInset = .zero
-        heartButton.imageView?.contentMode = .scaleAspectFit
-        backgroundColor = UIColor(named: "primaryColor")
+//        heartButton.imageView?.contentMode = .scaleAspectFit
+        backgroundColor = UIColor.Theme.primaryColor
+        renderShadow()
     }
 
     func bind(to viewModel: FeedItemViewModel) {
@@ -39,13 +40,13 @@ class FeedCell: UITableViewCell {
         bodyTextView.text = viewModel.post
         nameLabel.text = viewModel.author.name
 
-        if viewModel.isLiked {
-            setHeart(to: .full)
-        } else {
-            setHeart(to: .empty)
-        }
+//        if viewModel.isLiked {
+//            setHeart(to: .full)
+//        } else {
+//            setHeart(to: .empty)
+//        }
 
-        optionsButton.isHidden = !viewModel.doesOwnItem
+//        optionsButton.isHidden = !viewModel.doesOwnItem
     }
 
     enum Heart: String {
@@ -53,9 +54,9 @@ class FeedCell: UITableViewCell {
         case empty = "heart"
     }
 
-    private func setHeart(to heart: Heart) {
-        heartButton.setImage(UIImage(named: heart.rawValue), for: .normal)
-    }
+//    private func setHeart(to heart: Heart) {
+//        heartButton.setImage(UIImage(named: heart.rawValue), for: .normal)
+//    }
 
     @IBAction func didTapMore(sender: UIButton) {
         guard let itemId = viewModel?.itemId else { return }
@@ -63,20 +64,20 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func didTapHeart(sender: UIButton) {
-        guard let viewModel = self.viewModel else { return }
-
-        UIView.animate(withDuration: 0.2,
-                       delay: 0,
-                       usingSpringWithDamping: 1,
-                       initialSpringVelocity: 1,
-                       options: [.curveEaseIn], animations: {
-            self.heartButton.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-            self.generator.impactOccurred()
-        }, completion: { hasComplete in
-            UIView.animate(withDuration: 0.2, animations: { [weak self] in
-                self?.heartButton.transform = .identity
-                self?.setHeart(to: viewModel.isLiked ? .empty : .full)
-            })
-        })
+//        guard let viewModel = self.viewModel else { return }
+//
+//        UIView.animate(withDuration: 0.2,
+//                       delay: 0,
+//                       usingSpringWithDamping: 1,
+//                       initialSpringVelocity: 1,
+//                       options: [.curveEaseIn], animations: {
+//            self.heartButton.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+//            self.generator.impactOccurred()
+//        }, completion: { hasComplete in
+//            UIView.animate(withDuration: 0.2, animations: { [weak self] in
+//                self?.heartButton.transform = .identity
+//                self?.setHeart(to: viewModel.isLiked ? .empty : .full)
+//            })
+//        })
     }
 }

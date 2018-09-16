@@ -19,25 +19,25 @@ class FeedController: UIViewController, Coordinated {
 
     private let viewModel: FeedViewModel
     private var viewModels: [FeedItemViewModel] = [] {
-        didSet { tableView.reloadData() }
+        didSet { collectionView.reloadData() }
     }
 
     private lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
         control.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
-        control.tintColor = .accentColor
+        control.tintColor = UIColor.Theme.accentColor
         return control
     }()
 
-    private lazy var tableView: UITableView = {
-        let view = UITableView(frame: .zero, style: .plain)
-        view.register(UINib(nibName: "FeedCell", bundle: .main), forCellReuseIdentifier: .feedCellId)
-        view.rowHeight = UITableView.automaticDimension
-        view.estimatedRowHeight = 100
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = Constants.Feed.spacing
+        layout.minimumLineSpacing = Constants.Feed.spacing
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = UIColor.Theme.backgroundColor
         view.delegate = self
         view.dataSource = self
-        view.separatorStyle = .none
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.register(UINib(nibName: "FeedCell", bundle: .main), forCellWithReuseIdentifier: .feedCellId)
         return view
     }()
 
@@ -52,7 +52,7 @@ class FeedController: UIViewController, Coordinated {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = UIColor.Theme.backgroundColor
         title = "Home"
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"),
@@ -65,12 +65,12 @@ class FeedController: UIViewController, Coordinated {
                                                             target: self,
                                                             action: #selector(didTapEdit(sender:)))
 
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.view)
         }
 
-        tableView.refreshControl = refreshControl
+        collectionView.refreshControl = refreshControl
         viewModel.delegate = self
     }
 
@@ -101,30 +101,60 @@ class FeedController: UIViewController, Coordinated {
     }
 }
 
-extension FeedController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+extension FeedController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModels.count
     }
-}
 
-extension FeedController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = viewModels[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: .feedCellId, for: indexPath) as! FeedCell
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath) as! FeedCell
-        cell.bind(to: viewModel)
+        cell.bind(to: viewModels[indexPath.row])
         cell.delegate = self
         return cell
     }
+}
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+extension FeedController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        return CGSize(width: width - (Constants.Feed.spacing * 2), height: 150)
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: Constants.Feed.spacing,
+                            left: 0,
+                            bottom: Constants.Feed.spacing,
+                            right: 0)
     }
 }
+
+//extension FeedController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//}
+//
+//extension FeedController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let viewModel = viewModels[indexPath.row]
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: .feedCellId, for: indexPath) as! FeedCell
+//        cell.bind(to: viewModel)
+//        cell.delegate = self
+//        return cell
+//    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return viewModels.count
+//    }
+//}
 
 extension FeedController: FeedViewModelDelegate {
     func didUpdate(state: FeedViewModel.State) {

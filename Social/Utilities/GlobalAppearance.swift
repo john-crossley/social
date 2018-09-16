@@ -19,16 +19,16 @@ class GlobalAppearance {
         let appearence = UINavigationBar.appearance()
         appearence.barTintColor = .white
         appearence.isTranslucent = true
-        appearence.tintColor = UIColor.accentColor
+        appearence.tintColor = UIColor.Theme.accentColor
 
-        appearence.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.accentColor]
-        appearence.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.accentColor]
+        appearence.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.accentColor]
+        appearence.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.accentColor]
     }
 
     private func styleTabBar() {
         let appearence = UITabBar.appearance()
         appearence.isTranslucent = true
-        appearence.tintColor = .accentColor
+        appearence.tintColor = UIColor.Theme.accentColor
         appearence.barTintColor = .white
     }
 }

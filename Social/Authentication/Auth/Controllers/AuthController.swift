@@ -25,7 +25,7 @@ class AuthController: UIViewController, Coordinated {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.textColor = .accentColor
+        titleLabel.textColor = UIColor.Theme.accentColor
     }
 
     @IBAction func didTapRegister(sender: SocialButton) {

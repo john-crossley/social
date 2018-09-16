@@ -9,6 +9,12 @@
 import UIKit
 
 extension UIColor {
-    static let accentColor: UIColor = UIColor(named: "accentColor") ?? .red
-    static let secondaryTextColor: UIColor = UIColor(named: "secondaryTextColor") ?? .lightGray
+
+    struct Theme {
+        static let primaryColor: UIColor = UIColor(named: "primaryColor") ?? .white
+        static let accentColor: UIColor = UIColor(named: "accentColor") ?? .red
+        static let secondaryTextColor: UIColor = UIColor(named: "secondaryTextColor") ?? .lightGray
+        static let backgroundColor: UIColor = UIColor(named: "backgroundColor") ?? .white
+    }
+
 }

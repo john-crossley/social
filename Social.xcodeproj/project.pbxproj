@@ -42,6 +42,8 @@
 		9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */; };
 		9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */; };
 		9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */; };
+		9A98195E214E86080050FA6A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98195D214E86080050FA6A /* Constants.swift */; };
+		9A981960214E87C90050FA6A /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A98195F214E87C90050FA6A /* Empty.xib */; };
 		9A9B30B9214AFFE6004704AF /* CreateFeedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9B30B8214AFFE6004704AF /* CreateFeedController.xib */; };
 		9A9B30BB214B01D1004704AF /* CreateFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B30BA214B01D1004704AF /* CreateFeedController.swift */; };
 		9A9FA96F214936E6008012C2 /* FeedItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */; };
@@ -126,6 +128,8 @@
 		9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppearance.swift; sourceTree = "<group>"; };
 		9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9A8970CF2142A59B00066E72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A98195D214E86080050FA6A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9A98195F214E87C90050FA6A /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		9A9B30B8214AFFE6004704AF /* CreateFeedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateFeedController.xib; sourceTree = "<group>"; };
 		9A9B30BA214B01D1004704AF /* CreateFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFeedController.swift; sourceTree = "<group>"; };
 		9A9FA96E214936E6008012C2 /* FeedItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			children = (
 				9A2FF68421480ED200ABD549 /* FeedCell.swift */,
 				9A2FF68621480EED00ABD549 /* FeedCell.xib */,
+				9A98195F214E87C90050FA6A /* Empty.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */,
 				9A310F8F2142D79900CF221E /* DependencyContainer.swift */,
 				9A79D93621485AB200D49191 /* Result.swift */,
+				9A98195D214E86080050FA6A /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -647,6 +653,7 @@
 				9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */,
 				9A310F812142C1B600CF221E /* RegisterController.xib in Resources */,
 				9A310F712142AA0100CF221E /* AuthController.xib in Resources */,
+				9A981960214E87C90050FA6A /* Empty.xib in Resources */,
 				9A9B30B9214AFFE6004704AF /* CreateFeedController.xib in Resources */,
 				9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */,
 				9A8970D02142A59B00066E72 /* GoogleService-Info.plist in Resources */,
@@ -782,6 +789,7 @@
 				9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */,
 				9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */,
 				9A79D93B21485B8F00D49191 /* FirebaseFeedService.swift in Sources */,
+				9A98195E214E86080050FA6A /* Constants.swift in Sources */,
 				9A2FF68521480ED200ABD549 /* FeedCell.swift in Sources */,
 				9A79D93721485AB200D49191 /* Result.swift in Sources */,
 				9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */,
