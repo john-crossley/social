@@ -53,7 +53,9 @@ class FeedController: UIViewController, Coordinated {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.Theme.backgroundColor
-        title = "Home"
+        title = "My Stream"
+
+        navigationController?.navigationBar.prefersLargeTitles = true
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "user"),
                                                            style: .plain,
@@ -128,6 +130,11 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
                             left: 0,
                             bottom: Constants.Feed.spacing,
                             right: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath) as! FeedCell
+//        
     }
 }
 

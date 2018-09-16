@@ -29,12 +29,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-wJ-g9A">
-                                <rect key="frame" x="336" y="16" width="23" height="20"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Sup bro? Did you already sign up to my upcoming event? 🤓" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEn-go-nJJ">
+                                <rect key="frame" x="82" y="45.5" width="277" height="88.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Yk-ll-Kpx">
                                 <rect key="frame" x="16" y="16" width="50" height="50"/>
                                 <color key="backgroundColor" name="accentColor"/>
@@ -43,25 +43,41 @@
                                     <constraint firstAttribute="width" constant="50" id="vvS-YT-L8F"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Sup bro? Did you already sign up to my upcoming event? 🤓" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEn-go-nJJ">
-                                <rect key="frame" x="82" y="45.5" width="277" height="88.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D5l-DJ-j7N">
+                                <rect key="frame" x="305" y="16" width="54" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-wJ-g9A">
+                                        <rect key="frame" x="0.0" y="0.0" width="23" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbn-B4-kUc">
+                                        <rect key="frame" x="31" y="0.0" width="23" height="22"/>
+                                        <color key="tintColor" name="secondaryTextColor"/>
+                                        <state key="normal" image="more-vertical"/>
+                                        <connections>
+                                            <action selector="didTapMoreWithSender:" destination="73g-FU-Bzf" eventType="touchUpInside" id="5uZ-B2-NKD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jbn-B4-kUc" firstAttribute="width" secondItem="7qh-wJ-g9A" secondAttribute="width" id="Gwd-hX-3Je"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Yk-ll-Kpx" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="0Fz-e8-z4G"/>
                             <constraint firstItem="ga3-ku-xah" firstAttribute="leading" secondItem="6Yk-ll-Kpx" secondAttribute="trailing" constant="16" id="2zu-dN-LwQ"/>
-                            <constraint firstAttribute="trailing" secondItem="7qh-wJ-g9A" secondAttribute="trailing" constant="16" id="6EM-Q0-cs4"/>
+                            <constraint firstItem="D5l-DJ-j7N" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="5yQ-RC-HWr"/>
                             <constraint firstItem="ga3-ku-xah" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="7EB-cN-bXb"/>
                             <constraint firstAttribute="bottom" secondItem="WEn-go-nJJ" secondAttribute="bottom" constant="16" id="EaK-oK-C4A"/>
                             <constraint firstItem="6Yk-ll-Kpx" firstAttribute="leading" secondItem="dgR-mO-9ES" secondAttribute="leading" constant="16" id="I4t-rC-MKs"/>
                             <constraint firstItem="WEn-go-nJJ" firstAttribute="top" secondItem="ga3-ku-xah" secondAttribute="bottom" constant="8" id="QNg-iC-vpD"/>
-                            <constraint firstItem="7qh-wJ-g9A" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="Ym6-Gb-gxU"/>
                             <constraint firstAttribute="trailing" secondItem="WEn-go-nJJ" secondAttribute="trailing" constant="16" id="e8c-FW-XdK"/>
                             <constraint firstItem="WEn-go-nJJ" firstAttribute="leading" secondItem="6Yk-ll-Kpx" secondAttribute="trailing" constant="16" id="em6-xf-lkL"/>
+                            <constraint firstAttribute="trailing" secondItem="D5l-DJ-j7N" secondAttribute="trailing" constant="16" id="qzD-mB-JJd"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -79,13 +95,18 @@
                 <outlet property="bodyTextView" destination="WEn-go-nJJ" id="fx6-ay-0NM"/>
                 <outlet property="dateTimeLabel" destination="7qh-wJ-g9A" id="0rB-uK-gSH"/>
                 <outlet property="nameLabel" destination="ga3-ku-xah" id="peb-bu-Ajl"/>
+                <outlet property="optionsButton" destination="Jbn-B4-kUc" id="su2-Jg-2pw"/>
             </connections>
-            <point key="canvasLocation" x="-489" y="0.0"/>
+            <point key="canvasLocation" x="-490.39999999999998" y="0.0"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="more-vertical" width="4" height="18"/>
         <namedColor name="accentColor">
             <color red="0.71764705882352942" green="0.18823529411764706" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryTextColor">
+            <color red="0.46666666666666667" green="0.54509803921568623" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -19,18 +19,15 @@ class FeedCell: UICollectionViewCell {
 
     private let generator = UIImpactFeedbackGenerator(style: .light)
 
-//    @IBOutlet private var heartButton: UIButton!
     @IBOutlet private var authorImageView: UIImageView!
     @IBOutlet private var bodyTextView: UITextView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var dateTimeLabel: UILabel!
-//    @IBOutlet private var likeCountLabel: UILabel!
-//    @IBOutlet private var optionsButton: UIButton!
+    @IBOutlet private var optionsButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        nameLabel.textColor = UIColor.Theme.primaryTextColor
         dateTimeLabel.textColor = UIColor.Theme.secondaryTextColor
 
         bodyTextView.textContainer.lineFragmentPadding = 0
@@ -40,9 +37,33 @@ class FeedCell: UICollectionViewCell {
         authorImageView.layer.cornerRadius = authorImageView.bounds.width / 2
         authorImageView.layer.masksToBounds = false
 
-//        heartButton.imageView?.contentMode = .scaleAspectFit
         backgroundColor = UIColor.Theme.primaryColor
         renderShadow()
+
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(didPerformLongTap(gesture:)))
+        addGestureRecognizer(gesture)
+    }
+
+    @objc private func didPerformLongTap(gesture: UILongPressGestureRecognizer) {
+        guard gesture.state == .began else { return }
+        guard viewModel?.doesOwnItem == true else { return }
+        guard let itemId = viewModel?.itemId else { return }
+
+        UIView.animate(withDuration: 0.2,
+                       delay: 0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 1,
+                       options: [.curveEaseIn], animations: {
+                        self.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                        self.generator.impactOccurred()
+
+                        self.delegate?.didTapOptions(for: itemId)
+        }, completion: { hasComplete in
+            UIView.animate(withDuration: 0.2, animations: { [weak self] in
+                self?.transform = .identity
+            })
+        })
+
     }
 
     func bind(to viewModel: FeedItemViewModel) {
@@ -52,44 +73,17 @@ class FeedCell: UICollectionViewCell {
         nameLabel.text = viewModel.author.name
         dateTimeLabel.text = viewModel.timeSince
 
-//        if viewModel.isLiked {
-//            setHeart(to: .full)
-//        } else {
-//            setHeart(to: .empty)
-//        }
+        if viewModel.doesOwnItem {
+            nameLabel.textColor = UIColor.Theme.accentColor
+        } else {
+            nameLabel.textColor = UIColor.Theme.primaryTextColor
+        }
 
-//        optionsButton.isHidden = !viewModel.doesOwnItem
+        optionsButton.isHidden = !viewModel.doesOwnItem
     }
-
-    enum Heart: String {
-        case full = "heart_filled"
-        case empty = "heart"
-    }
-
-//    private func setHeart(to heart: Heart) {
-//        heartButton.setImage(UIImage(named: heart.rawValue), for: .normal)
-//    }
 
     @IBAction func didTapMore(sender: UIButton) {
         guard let itemId = viewModel?.itemId else { return }
         delegate?.didTapOptions(for: itemId)
-    }
-
-    @IBAction func didTapHeart(sender: UIButton) {
-//        guard let viewModel = self.viewModel else { return }
-//
-//        UIView.animate(withDuration: 0.2,
-//                       delay: 0,
-//                       usingSpringWithDamping: 1,
-//                       initialSpringVelocity: 1,
-//                       options: [.curveEaseIn], animations: {
-//            self.heartButton.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-//            self.generator.impactOccurred()
-//        }, completion: { hasComplete in
-//            UIView.animate(withDuration: 0.2, animations: { [weak self] in
-//                self?.heartButton.transform = .identity
-//                self?.setHeart(to: viewModel.isLiked ? .empty : .full)
-//            })
-//        })
     }
 }
