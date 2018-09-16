@@ -13,6 +13,7 @@ extension UIColor {
     struct Theme {
         static let primaryColor: UIColor = UIColor(named: "primaryColor") ?? .white
         static let accentColor: UIColor = UIColor(named: "accentColor") ?? .red
+        static let primaryTextColor: UIColor = UIColor(named: "primaryTextColor") ?? .black
         static let secondaryTextColor: UIColor = UIColor(named: "secondaryTextColor") ?? .lightGray
         static let backgroundColor: UIColor = UIColor(named: "backgroundColor") ?? .white
     }

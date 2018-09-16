@@ -20,15 +20,26 @@ class FeedCell: UICollectionViewCell {
     private let generator = UIImpactFeedbackGenerator(style: .light)
 
 //    @IBOutlet private var heartButton: UIButton!
+    @IBOutlet private var authorImageView: UIImageView!
     @IBOutlet private var bodyTextView: UITextView!
     @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var dateTimeLabel: UILabel!
 //    @IBOutlet private var likeCountLabel: UILabel!
 //    @IBOutlet private var optionsButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        nameLabel.textColor = UIColor.Theme.primaryTextColor
+        dateTimeLabel.textColor = UIColor.Theme.secondaryTextColor
+
         bodyTextView.textContainer.lineFragmentPadding = 0
         bodyTextView.textContainerInset = .zero
+        bodyTextView.textColor = UIColor.Theme.secondaryTextColor
+
+        authorImageView.layer.cornerRadius = authorImageView.bounds.width / 2
+        authorImageView.layer.masksToBounds = false
+
 //        heartButton.imageView?.contentMode = .scaleAspectFit
         backgroundColor = UIColor.Theme.primaryColor
         renderShadow()

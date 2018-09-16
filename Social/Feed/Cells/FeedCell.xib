@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,35 +24,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Crossley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga3-ku-xah">
-                                <rect key="frame" x="74" y="16" width="108" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <rect key="frame" x="82" y="16" width="119.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:29 16/9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-wJ-g9A">
-                                <rect key="frame" x="288" y="16" width="71" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1hr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qh-wJ-g9A">
+                                <rect key="frame" x="336" y="16" width="23" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Yk-ll-Kpx">
                                 <rect key="frame" x="16" y="16" width="50" height="50"/>
+                                <color key="backgroundColor" name="accentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6Yk-ll-Kpx" secondAttribute="height" multiplier="1:1" id="VkR-2d-hiN"/>
                                     <constraint firstAttribute="width" constant="50" id="vvS-YT-L8F"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Sup bro? Did you already sign up to my upcoming event? 🤓" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEn-go-nJJ">
-                                <rect key="frame" x="74" y="44" width="285" height="90"/>
+                                <rect key="frame" x="82" y="45.5" width="277" height="88.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Yk-ll-Kpx" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="0Fz-e8-z4G"/>
-                            <constraint firstItem="ga3-ku-xah" firstAttribute="leading" secondItem="6Yk-ll-Kpx" secondAttribute="trailing" constant="8" id="2zu-dN-LwQ"/>
+                            <constraint firstItem="ga3-ku-xah" firstAttribute="leading" secondItem="6Yk-ll-Kpx" secondAttribute="trailing" constant="16" id="2zu-dN-LwQ"/>
                             <constraint firstAttribute="trailing" secondItem="7qh-wJ-g9A" secondAttribute="trailing" constant="16" id="6EM-Q0-cs4"/>
                             <constraint firstItem="ga3-ku-xah" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="7EB-cN-bXb"/>
                             <constraint firstAttribute="bottom" secondItem="WEn-go-nJJ" secondAttribute="bottom" constant="16" id="EaK-oK-C4A"/>
@@ -59,7 +61,7 @@
                             <constraint firstItem="WEn-go-nJJ" firstAttribute="top" secondItem="ga3-ku-xah" secondAttribute="bottom" constant="8" id="QNg-iC-vpD"/>
                             <constraint firstItem="7qh-wJ-g9A" firstAttribute="top" secondItem="dgR-mO-9ES" secondAttribute="top" constant="16" id="Ym6-Gb-gxU"/>
                             <constraint firstAttribute="trailing" secondItem="WEn-go-nJJ" secondAttribute="trailing" constant="16" id="e8c-FW-XdK"/>
-                            <constraint firstItem="WEn-go-nJJ" firstAttribute="leading" secondItem="6Yk-ll-Kpx" secondAttribute="trailing" constant="8" id="em6-xf-lkL"/>
+                            <constraint firstItem="WEn-go-nJJ" firstAttribute="leading" secondItem="6Yk-ll-Kpx" secondAttribute="trailing" constant="16" id="em6-xf-lkL"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -73,10 +75,17 @@
             <viewLayoutGuide key="safeArea" id="5Og-ko-0NV"/>
             <size key="customSize" width="375" height="150"/>
             <connections>
+                <outlet property="authorImageView" destination="6Yk-ll-Kpx" id="eb4-w3-nV1"/>
                 <outlet property="bodyTextView" destination="WEn-go-nJJ" id="fx6-ay-0NM"/>
+                <outlet property="dateTimeLabel" destination="7qh-wJ-g9A" id="0rB-uK-gSH"/>
                 <outlet property="nameLabel" destination="ga3-ku-xah" id="peb-bu-Ajl"/>
             </connections>
             <point key="canvasLocation" x="-489" y="0.0"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="accentColor">
+            <color red="0.71764705882352942" green="0.18823529411764706" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
