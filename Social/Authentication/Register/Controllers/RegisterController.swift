@@ -16,8 +16,14 @@ class RegisterController: UIViewController, Coordinated {
     private let validationService: FormValidationService
 
     @IBOutlet private var nameTextField: UITextField!
+    @IBOutlet private var nameLabel: UILabel!
+
     @IBOutlet private var emailTextField: UITextField!
+    @IBOutlet private var emailLabel: UILabel!
+
     @IBOutlet private var passwordTextField: UITextField!
+    @IBOutlet private var passwordLabel: UILabel!
+
     @IBOutlet private var registerButton: SocialButton!
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,14 +54,17 @@ class RegisterController: UIViewController, Coordinated {
     private func parepareForm() {
         nameTextField.delegate = self
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        nameLabel.isHidden = true
         validationService.set(rules: [MinRule(3)], for: "name")
 
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        emailLabel.isHidden = true
         validationService.set(rules: [MinRule(3)], for: "email")
 
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        passwordLabel.isHidden = true
         validationService.set(rules: [MinRule(3)], for: "password")
 
         resetRegisterButton()
@@ -135,6 +144,27 @@ extension RegisterController: UITextFieldDelegate {
 
 extension RegisterController: FormValidationServiceDelegate {
     func isFormValid(_ isValid: Bool) {
-        registerButton.is( isValid ? .enabled : .disabled )
+        registerButton.is(isValid ? .enabled : .disabled)
+
+        if let nameError = validationService.errors(for: "name").first {
+            nameLabel.isHidden = false
+            nameLabel.text = nameError
+        } else {
+            nameLabel.isHidden = true
+        }
+
+        if let emailError = validationService.errors(for: "email").first {
+            emailLabel.isHidden = false
+            emailLabel.text = emailError
+        } else {
+            emailLabel.isHidden = true
+        }
+
+        if let passwordError = validationService.errors(for: "password").first {
+            passwordLabel.isHidden = false
+            passwordLabel.text = passwordError
+        } else {
+            passwordLabel.isHidden = true
+        }
     }
 }

@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-DD-Hgd" userLabel="Form">
-                    <rect key="frame" x="32" y="96" width="311" height="311"/>
+                    <rect key="frame" x="32" y="80" width="311" height="263"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CP-7k-Ifp">
                             <rect key="frame" x="0.0" y="0.0" width="311" height="19.5"/>
@@ -50,21 +50,14 @@
                             <color key="textColor" name="accentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nds-OM-tGB">
-                            <rect key="frame" x="0.0" y="104.5" width="311" height="16"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="16" id="9eE-Ug-Ryr"/>
-                            </constraints>
-                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-oh-ZTn">
-                            <rect key="frame" x="0.0" y="128.5" width="311" height="19.5"/>
+                            <rect key="frame" x="0.0" y="104.5" width="311" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <color key="textColor" name="primaryTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-OO-tgt">
-                            <rect key="frame" x="0.0" y="156" width="311" height="44"/>
+                            <rect key="frame" x="0.0" y="132" width="311" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="oBU-WT-U4q"/>
                             </constraints>
@@ -73,20 +66,13 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error message will show here..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvw-n8-QwU">
-                            <rect key="frame" x="0.0" y="208" width="311" height="17"/>
+                            <rect key="frame" x="0.0" y="184" width="311" height="17"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                             <color key="textColor" name="accentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="edk-eF-KTh">
-                            <rect key="frame" x="0.0" y="233" width="311" height="16"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="16" id="DMV-8A-6Zi"/>
-                            </constraints>
-                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTn-CT-2VN" customClass="SocialButton" customModule="Social" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="257" width="311" height="54"/>
+                            <rect key="frame" x="0.0" y="209" width="311" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="ebu-ue-ZSN"/>
                             </constraints>
@@ -106,7 +92,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="q3Q-DD-Hgd" firstAttribute="top" secondItem="UAl-fd-9NE" secondAttribute="top" constant="32" id="0gh-xW-kdC"/>
+                <constraint firstItem="q3Q-DD-Hgd" firstAttribute="top" secondItem="UAl-fd-9NE" secondAttribute="top" constant="16" id="0gh-xW-kdC"/>
                 <constraint firstItem="UAl-fd-9NE" firstAttribute="trailing" secondItem="q3Q-DD-Hgd" secondAttribute="trailing" constant="32" id="OtJ-Bd-3qj"/>
                 <constraint firstItem="q3Q-DD-Hgd" firstAttribute="leading" secondItem="UAl-fd-9NE" secondAttribute="leading" constant="32" id="Qbm-Jb-Ou3"/>
             </constraints>
