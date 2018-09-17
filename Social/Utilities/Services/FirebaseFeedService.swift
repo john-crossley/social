@@ -24,28 +24,30 @@ class FirebaseFeedService: FeedService {
     private lazy var feedRef = db.collection("users")
 
     func loadFeedItems(for user: User, callback: @escaping (Result<[FeedItem]>) -> Void) {
+
         feedRef.order(by: "timestamp", descending: true)
             .limit(to: 1000)
-            .getDocuments { (querySnapshot, error) in
+            .addSnapshotListener { (querySnapshot, error) in
 
-            guard let documents = querySnapshot?.documents else {
-                callback(.error(""))
-                return
-            }
-
-            do {
-                let decoder = FirebaseDecoder()
-                let models: [FeedItem] = try documents.map { document in
-                    var item = try decoder.decode(FeedItem.self, from: document.data())
-                    item.id = document.reference.documentID
-                    return item
+                guard let documents = querySnapshot?.documents else {
+                    callback(.error("Unable to retrieve documents from snapshot."))
+                    return
                 }
 
-                callback(.success(models))
+                do {
+                    let decoder = FirebaseDecoder()
+                    let models: [FeedItem] = try documents.map { document in
+                        var item = try decoder.decode(FeedItem.self, from: document.data())
+                        item.id = document.reference.documentID
+                        return item
+                    }
 
-            } catch let error {
-                callback(.error(error.localizedDescription))
-            }
+                    callback(.success(models))
+
+                } catch let error {
+                    callback(.error(error.localizedDescription))
+                }
+
         }
     }
 

@@ -50,8 +50,8 @@ class FeedViewModel {
                 switch result {
                 case .success:
                     self.coordinator?.dismiss()
-                case .error: break
-//                    error
+                case .error(let reason):
+                    self.state = .error(reason)
             }
         })
     }
