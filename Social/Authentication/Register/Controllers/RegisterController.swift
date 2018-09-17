@@ -60,7 +60,7 @@ class RegisterController: UIViewController, Coordinated {
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailLabel.isHidden = true
-        validationService.set(rules: [MinRule(3)], for: "email")
+        validationService.set(rules: [EmailRule()], for: "email")
 
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)

@@ -28,8 +28,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-HZ-0uo" userLabel="Form">
-                    <rect key="frame" x="32" y="80" width="311" height="439.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-HZ-0uo" userLabel="Form">
+                    <rect key="frame" x="32" y="80" width="311" height="367.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEW-d1-KRX">
                             <rect key="frame" x="0.0" y="0.0" width="311" height="19.5"/>
@@ -38,7 +38,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cwz-Jp-bsj">
-                            <rect key="frame" x="0.0" y="35.5" width="311" height="44"/>
+                            <rect key="frame" x="0.0" y="27.5" width="311" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="cki-HK-KJp"/>
                             </constraints>
@@ -47,19 +47,19 @@
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error message will show here..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je0-EG-0be">
-                            <rect key="frame" x="0.0" y="95.5" width="311" height="17"/>
+                            <rect key="frame" x="0.0" y="79.5" width="311" height="17"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                             <color key="textColor" name="accentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPK-Vx-w5B">
-                            <rect key="frame" x="0.0" y="128.5" width="311" height="19.5"/>
+                            <rect key="frame" x="0.0" y="104.5" width="311" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john@example.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-Xq-sQ0">
-                            <rect key="frame" x="0.0" y="164" width="311" height="44"/>
+                            <rect key="frame" x="0.0" y="132" width="311" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="f0T-tL-kAm"/>
                             </constraints>
@@ -68,19 +68,19 @@
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error message will show here..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-Me-YtP">
-                            <rect key="frame" x="0.0" y="224" width="311" height="17"/>
+                            <rect key="frame" x="0.0" y="184" width="311" height="17"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                             <color key="textColor" name="accentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sH-aX-gOA">
-                            <rect key="frame" x="0.0" y="257" width="311" height="19.5"/>
+                            <rect key="frame" x="0.0" y="209" width="311" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="my secure password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-7a-K0w">
-                            <rect key="frame" x="0.0" y="292.5" width="311" height="44"/>
+                            <rect key="frame" x="0.0" y="236.5" width="311" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="8aL-99-sZL"/>
                             </constraints>
@@ -89,13 +89,13 @@
                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An error message will show here..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjf-1B-ohV">
-                            <rect key="frame" x="0.0" y="352.5" width="311" height="17"/>
+                            <rect key="frame" x="0.0" y="288.5" width="311" height="17"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                             <color key="textColor" name="accentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-0T-qVc" customClass="SocialButton" customModule="Social" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="385.5" width="311" height="54"/>
+                            <rect key="frame" x="0.0" y="313.5" width="311" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="gjh-8S-lFp"/>
                             </constraints>

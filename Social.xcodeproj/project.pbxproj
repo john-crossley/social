@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A1E49B9215045C30043407E /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E49B8215045C30043407E /* EmailRule.swift */; };
 		9A2FF68521480ED200ABD549 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FF68421480ED200ABD549 /* FeedCell.swift */; };
 		9A2FF68721480EED00ABD549 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2FF68621480EED00ABD549 /* FeedCell.xib */; };
 		9A310F6F2142A9CA00CF221E /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A310F6E2142A9CA00CF221E /* AuthController.swift */; };
@@ -87,6 +88,7 @@
 		59A51F2FC4E517264302976B /* Pods-SocialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTests/Pods-SocialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D4231B4B16A6314E18132C0 /* Pods_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890100942B1A334D590D1459 /* Pods_SocialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1E49B8215045C30043407E /* EmailRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
 		9A2FF68421480ED200ABD549 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		9A2FF68621480EED00ABD549 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		9A310F6E2142A9CA00CF221E /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				9AB7DF9621471A7500EA075C /* Rule.swift */,
 				9AB7DF9821471A8400EA075C /* MaxRule.swift */,
 				9AB7DF9A21471A9500EA075C /* MinRule.swift */,
+				9A1E49B8215045C30043407E /* EmailRule.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				9A8970992142A1EE00066E72 /* AppDelegate.swift in Sources */,
 				9A310F732142AF2B00CF221E /* UIViewController+Extensions.swift in Sources */,
 				9A310F7F2142BBED00CF221E /* Coordinator.swift in Sources */,
+				9A1E49B9215045C30043407E /* EmailRule.swift in Sources */,
 				9A310F8E2142D76400CF221E /* FirebaseAuthService.swift in Sources */,
 				9AB7DF9921471A8400EA075C /* MaxRule.swift in Sources */,
 				9A310F8C2142D68E00CF221E /* User.swift in Sources */,

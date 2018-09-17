@@ -28,8 +28,6 @@ class FormValidationServiceTests: XCTestCase {
         service.validate("jo", for: "username")
         XCTAssertFalse(service.isValid)
         XCTAssertEqual("Not enough characters, minimum is 3", service.errors(for: "username").first!)
-
-
     }
 
     func testItIsValidWhenRequirementsMetUsingDelegate() {
@@ -74,5 +72,19 @@ class FormValidationServiceTests: XCTestCase {
 
         XCTAssertFalse(mockServiceDelegate.isValid)
         XCTAssertEqual("Not enough characters, minimum is 3", service.errors(for: "name").first!)
+    }
+
+    func testItCanValidateEmailAddresses() {
+        let service = FormValidationService()
+        let mockServiceDelegate = MockFormValidationServiceDelegate()
+        service.delegate = mockServiceDelegate
+
+        service.set(rules: [EmailRule()], for: "email")
+
+        service.validate("fake@fake", for: "email")
+        XCTAssertFalse(mockServiceDelegate.isValid)
+
+        service.validate("email@email.co", for: "email")
+        XCTAssertTrue(mockServiceDelegate.isValid)
     }
 }
