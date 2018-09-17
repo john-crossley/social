@@ -12,8 +12,12 @@ import GyozaKit
 class SignInController: UIViewController, Coordinated {
     var coordinator: MainCoordinator?
     @IBOutlet private var signInButton: SocialButton!
+
     @IBOutlet private var emailTextField: UITextField!
+    @IBOutlet private var emailLabel: UILabel!
+
     @IBOutlet private var passwordTextField: UITextField!
+    @IBOutlet private var passwordLabel: UILabel!
 
     private let viewModel: SignInViewModel
     private let validationService: FormValidationService
@@ -31,7 +35,7 @@ class SignInController: UIViewController, Coordinated {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Sign In"
+        title = "Welcome to Sōsharu"
 
         viewModel.delegate = self
         validationService.delegate = self
@@ -39,10 +43,12 @@ class SignInController: UIViewController, Coordinated {
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         validationService.set(rules: [MinRule(3)], for: "email")
+        emailLabel.isHidden = true
 
         passwordTextField.delegate = self
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         validationService.set(rules: [MinRule(3)], for: "password")
+        passwordLabel.isHidden = true
 
         signInButton.is(.disabled)
     }
@@ -96,6 +102,20 @@ extension SignInController: SignInViewModelDelegate {
 
 extension SignInController: FormValidationServiceDelegate {
     func isFormValid(_ isValid: Bool) {
-        signInButton.is( isValid ? .enabled : .disabled )
+        signInButton.is(isValid ? .enabled : .disabled)
+
+        if let emailError = validationService.errors(for: "email").first {
+            emailLabel.isHidden = false
+            emailLabel.text = emailError
+        } else {
+            emailLabel.isHidden = true
+        }
+
+        if let passwordError = validationService.errors(for: "password").first {
+            passwordLabel.isHidden = false
+            passwordLabel.text = passwordError
+        } else {
+            passwordLabel.isHidden = true
+        }
     }
 }

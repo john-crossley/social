@@ -10,6 +10,8 @@ import Foundation
 @testable import Social
 
 class MockFeedService: FeedService {
+    func removeItem(by id: String, callback: @escaping (Result<String>) -> Void) {}
+
 
     private var items: [FeedItem] = [
         FeedItem(post: "How many light years away is Mars?", likes: [], author: Author(userId: "123abc", name: "John Smith")),
@@ -27,6 +29,8 @@ class MockFeedService: FeedService {
 }
 
 class MockErrorFeedService: FeedService {
+    func removeItem(by id: String, callback: @escaping (Result<String>) -> Void) {}
+
 
     private var items: [FeedItem] = []
 

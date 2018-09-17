@@ -10,12 +10,10 @@ import Foundation
 
 class FormInput {
     let rules: [Rule]
-    var isValid: Bool = false
-    var errors: [String] = []
+    var errors: [String: String] = [:]
 
-    init(_ rules: [Rule], isValid: Bool = false) {
+    init(_ rules: [Rule]) {
         self.rules = rules
-        self.isValid = isValid
     }
 }
 
@@ -34,25 +32,25 @@ class FormValidationService {
     }
 
     func errors(for label: String) -> [String] {
-        return inputs[label]?.errors ?? []
+        return rules(for: label).compactMap { self.inputs[label]?.errors[$0.name] }
     }
 
     var isValid: Bool {
-        return inputs.values.filter { !$0.isValid }.isEmpty
+        return inputs.values.filter { !$0.errors.isEmpty }.isEmpty
     }
 
     func validate(_ text: String, for label: String) {
 
         guard let formInput = formInput(for: label) else { return }
-        formInput.isValid = true
 
         for rule in formInput.rules {
             let result = rule.validate(text)
 
-            guard !result.isValid else { continue }
-
-            formInput.isValid = false
-            formInput.errors.append(result.message)
+            if result.isValid {
+                formInput.errors[rule.name] = nil
+            } else {
+                formInput.errors[rule.name] = result.message
+            }
         }
 
         delegate?.isFormValid(self.isValid)

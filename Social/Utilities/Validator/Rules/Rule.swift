@@ -14,5 +14,6 @@ struct ValidationResult {
 }
 
 protocol Rule: class {
+    var name: String { get }
     func validate(_ text: String?) -> ValidationResult
 }

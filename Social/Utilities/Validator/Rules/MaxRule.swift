@@ -9,6 +9,7 @@
 import Foundation
 
 class MaxRule: Rule {
+    var name: String = "max"
 
     private let max: Int
     private let message: String

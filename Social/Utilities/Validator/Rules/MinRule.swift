@@ -10,6 +10,8 @@ import Foundation
 
 class MinRule: Rule {
 
+    var name: String = "min"
+
     private let min: Int
     private let message: String
 
