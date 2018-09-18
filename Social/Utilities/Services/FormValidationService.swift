@@ -9,8 +9,19 @@
 import Foundation
 
 class FormInput {
+
+    enum Status {
+        case unchecked, valid, invalid
+    }
+
+    var status: Status = .unchecked
+
     let rules: [Rule]
     var errors: [String: String] = [:]
+
+    var hasErrors: Bool {
+        return !errors.isEmpty || status == .unchecked
+    }
 
     init(_ rules: [Rule]) {
         self.rules = rules
@@ -36,7 +47,7 @@ class FormValidationService {
     }
 
     var isValid: Bool {
-        return inputs.values.filter { !$0.errors.isEmpty }.isEmpty
+        return inputs.values.filter { $0.hasErrors }.isEmpty
     }
 
     func validate(_ text: String, for label: String) {
@@ -48,8 +59,10 @@ class FormValidationService {
 
             if result.isValid {
                 formInput.errors[rule.name] = nil
+                formInput.status = .valid
             } else {
                 formInput.errors[rule.name] = result.message
+                formInput.status = .invalid
             }
         }
 

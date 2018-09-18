@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F56542718B9F328A5312106 /* Pods_Social_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FDA3BBCD262989F73CDB30 /* Pods_Social_SocialUITests.framework */; };
 		9A1E49B9215045C30043407E /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E49B8215045C30043407E /* EmailRule.swift */; };
 		9A2FF68521480ED200ABD549 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FF68421480ED200ABD549 /* FeedCell.swift */; };
 		9A2FF68721480EED00ABD549 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2FF68621480EED00ABD549 /* FeedCell.xib */; };
@@ -58,6 +59,7 @@
 		9AC09CDF2145B353004C5314 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CDE2145B353004C5314 /* SignInController.swift */; };
 		9AC09CE22145B57A004C5314 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CE12145B57A004C5314 /* SignInViewModel.swift */; };
 		9AC09CE92146D925004C5314 /* FormValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */; };
+		AC9A87080765F3BD1546179A /* Pods_Social_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A9AE68B925F3F209627407 /* Pods_Social_SocialTests.framework */; };
 		C369AD7C46390D963E8AFF6C /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4231B4B16A6314E18132C0 /* Pods_Social.framework */; };
 		D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */; };
 		EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890100942B1A334D590D1459 /* Pods_SocialUITests.framework */; };
@@ -81,11 +83,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05A0F7414803395E12062154 /* Pods-Social-SocialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social-SocialTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social-SocialTests/Pods-Social-SocialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		068BA5A14A344FD015B1A5F7 /* Pods-Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social/Pods-Social.release.xcconfig"; sourceTree = "<group>"; };
+		33A9AE68B925F3F209627407 /* Pods_Social_SocialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_SocialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		410D8218611E2691CE9FF7EE /* Pods-Social-SocialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social-SocialTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social-SocialTests/Pods-Social-SocialTests.release.xcconfig"; sourceTree = "<group>"; };
 		4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAE4A4CFE07D2B55FD374B2 /* Pods-SocialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTests/Pods-SocialTests.release.xcconfig"; sourceTree = "<group>"; };
 		54E95EE3302DA331FA7E1B80 /* Pods-Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social/Pods-Social.debug.xcconfig"; sourceTree = "<group>"; };
 		59A51F2FC4E517264302976B /* Pods-SocialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTests/Pods-SocialTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69FDA3BBCD262989F73CDB30 /* Pods_Social_SocialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_SocialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4231B4B16A6314E18132C0 /* Pods_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890100942B1A334D590D1459 /* Pods_SocialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1E49B8215045C30043407E /* EmailRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
@@ -146,7 +152,9 @@
 		9AC09CE12145B57A004C5314 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		9AC09CE82146D925004C5314 /* FormValidationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationServiceTest.swift; sourceTree = "<group>"; };
 		CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4B1F21EAD398F517A64CCA0 /* Pods-Social-SocialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social-SocialUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social-SocialUITests/Pods-Social-SocialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialUITests/Pods-SocialUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ECFF16C4078033E2AE5F2941 /* Pods-Social-SocialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social-SocialUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social-SocialUITests/Pods-Social-SocialUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */,
+				AC9A87080765F3BD1546179A /* Pods_Social_SocialTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */,
+				0F56542718B9F328A5312106 /* Pods_Social_SocialUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +196,10 @@
 				4DAE4A4CFE07D2B55FD374B2 /* Pods-SocialTests.release.xcconfig */,
 				CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */,
 				DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */,
+				05A0F7414803395E12062154 /* Pods-Social-SocialTests.debug.xcconfig */,
+				410D8218611E2691CE9FF7EE /* Pods-Social-SocialTests.release.xcconfig */,
+				D4B1F21EAD398F517A64CCA0 /* Pods-Social-SocialUITests.debug.xcconfig */,
+				ECFF16C4078033E2AE5F2941 /* Pods-Social-SocialUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -541,6 +555,8 @@
 				7D4231B4B16A6314E18132C0 /* Pods_Social.framework */,
 				4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */,
 				890100942B1A334D590D1459 /* Pods_SocialUITests.framework */,
+				33A9AE68B925F3F209627407 /* Pods_Social_SocialTests.framework */,
+				69FDA3BBCD262989F73CDB30 /* Pods_Social_SocialUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -998,10 +1014,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1018,10 +1031,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1039,11 +1049,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1062,11 +1068,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1084,11 +1086,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1106,11 +1104,7 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
