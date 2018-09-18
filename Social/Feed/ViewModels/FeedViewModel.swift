@@ -61,7 +61,7 @@ class FeedViewModel {
 
         guard let user = authService.user else { return }
         
-        DispatchQueue(label: "social.background", qos: .userInitiated).async { [unowned self] in
+        DispatchQueue(label: "social.background", qos: .userInitiated).async {
             self.feedService.loadFeedItems(for: user) { result in
                 switch result {
                 case .success(let models):

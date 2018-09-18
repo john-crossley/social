@@ -42,7 +42,7 @@ class SignInController: UIViewController, Coordinated {
 
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        validationService.set(rules: [MinRule(3)], for: "email")
+        validationService.set(rules: [MinRule(3), EmailRule()], for: "email")
         emailLabel.isHidden = true
 
         passwordTextField.delegate = self
