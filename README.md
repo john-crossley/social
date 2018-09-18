@@ -11,6 +11,20 @@ It features a minimal set of requirements that allow the following:
 
 Social also includes a minimal set of frameworks, one of which I have developed called *[GyozaKit](https://cocoapods.org/pods/GyozaKit)* used for displaying messages to the user in an unobtrusive way.
 
+### Testing
+I developed this using the new XCode 10 build system so to run the tests you should have XCode 10 and an iOS 12 simulator (device).
+
+```bash
+xcodebuild \
+  -workspace Social.xcworkspace \
+  -scheme Social \
+  -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone X,OS=latest' \
+  test
+```
+
+If you would like to run this on a version `< iOS 12` simply clean the project and build it using XCode 9, everything should work fine.
+
 ![Auth Screen](https://github.com/john-crossley/social/blob/master/assets/auth-screen.png?raw=true "Auth Screen")
 
 ![Creating account with error](https://github.com/john-crossley/social/blob/master/assets/create-account-screen.png?raw=true "Create Account")

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F56542718B9F328A5312106 /* Pods_Social_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FDA3BBCD262989F73CDB30 /* Pods_Social_SocialUITests.framework */; };
 		9A1E49B9215045C30043407E /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E49B8215045C30043407E /* EmailRule.swift */; };
 		9A2FF68521480ED200ABD549 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2FF68421480ED200ABD549 /* FeedCell.swift */; };
 		9A2FF68721480EED00ABD549 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A2FF68621480EED00ABD549 /* FeedCell.xib */; };
@@ -39,7 +38,6 @@
 		9A8970A02142A1EE00066E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A89709F2142A1EE00066E72 /* Assets.xcassets */; };
 		9A8970A32142A1EE00066E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8970A12142A1EE00066E72 /* LaunchScreen.storyboard */; };
 		9A8970AE2142A1EE00066E72 /* SocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970AD2142A1EE00066E72 /* SocialTests.swift */; };
-		9A8970B92142A1EE00066E72 /* SocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970B82142A1EE00066E72 /* SocialUITests.swift */; };
 		9A8970C82142A3A600066E72 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970C72142A3A600066E72 /* FeedController.swift */; };
 		9A8970CB2142A3E800066E72 /* GlobalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */; };
 		9A8970CE2142A43900066E72 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */; };
@@ -62,18 +60,10 @@
 		AC9A87080765F3BD1546179A /* Pods_Social_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A9AE68B925F3F209627407 /* Pods_Social_SocialTests.framework */; };
 		C369AD7C46390D963E8AFF6C /* Pods_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D4231B4B16A6314E18132C0 /* Pods_Social.framework */; };
 		D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B4D87BC2EF46DA3F73CB7E3 /* Pods_SocialTests.framework */; };
-		EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890100942B1A334D590D1459 /* Pods_SocialUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		9A8970AA2142A1EE00066E72 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A89708D2142A1EE00066E72 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A8970942142A1EE00066E72;
-			remoteInfo = Social;
-		};
-		9A8970B52142A1EE00066E72 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A89708D2142A1EE00066E72 /* Project object */;
 			proxyType = 1;
@@ -129,9 +119,6 @@
 		9A8970A92142A1EE00066E72 /* SocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8970AD2142A1EE00066E72 /* SocialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTests.swift; sourceTree = "<group>"; };
 		9A8970AF2142A1EE00066E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A8970B42142A1EE00066E72 /* SocialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A8970B82142A1EE00066E72 /* SocialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUITests.swift; sourceTree = "<group>"; };
-		9A8970BA2142A1EE00066E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A8970C72142A3A600066E72 /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		9A8970CA2142A3E800066E72 /* GlobalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppearance.swift; sourceTree = "<group>"; };
 		9A8970CD2142A43900066E72 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -172,15 +159,6 @@
 			files = (
 				D00CD48BCA37594BB572584E /* Pods_SocialTests.framework in Frameworks */,
 				AC9A87080765F3BD1546179A /* Pods_Social_SocialTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9A8970B12142A1EE00066E72 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEDEBFD981F3911941D6C83C /* Pods_SocialUITests.framework in Frameworks */,
-				0F56542718B9F328A5312106 /* Pods_Social_SocialUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +302,6 @@
 			children = (
 				9A8970972142A1EE00066E72 /* Social */,
 				9A8970AC2142A1EE00066E72 /* SocialTests */,
-				9A8970B72142A1EE00066E72 /* SocialUITests */,
 				9A8970962142A1EE00066E72 /* Products */,
 				05B03AE7D73F2E25E5CE0E4F /* Pods */,
 				DC977C4516A2D5D6A9F1100F /* Frameworks */,
@@ -336,7 +313,6 @@
 			children = (
 				9A8970952142A1EE00066E72 /* Social.app */,
 				9A8970A92142A1EE00066E72 /* SocialTests.xctest */,
-				9A8970B42142A1EE00066E72 /* SocialUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,15 +345,6 @@
 				9A8970AF2142A1EE00066E72 /* Info.plist */,
 			);
 			path = SocialTests;
-			sourceTree = "<group>";
-		};
-		9A8970B72142A1EE00066E72 /* SocialUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9A8970B82142A1EE00066E72 /* SocialUITests.swift */,
-				9A8970BA2142A1EE00066E72 /* Info.plist */,
-			);
-			path = SocialUITests;
 			sourceTree = "<group>";
 		};
 		9A8970C62142A37F00066E72 /* Feed */ = {
@@ -602,25 +569,6 @@
 			productReference = 9A8970A92142A1EE00066E72 /* SocialTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9A8970B32142A1EE00066E72 /* SocialUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9A8970C32142A1EE00066E72 /* Build configuration list for PBXNativeTarget "SocialUITests" */;
-			buildPhases = (
-				24B5A8738C86DB0C7EA80BCF /* [CP] Check Pods Manifest.lock */,
-				9A8970B02142A1EE00066E72 /* Sources */,
-				9A8970B12142A1EE00066E72 /* Frameworks */,
-				9A8970B22142A1EE00066E72 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9A8970B62142A1EE00066E72 /* PBXTargetDependency */,
-			);
-			name = SocialUITests;
-			productName = SocialUITests;
-			productReference = 9A8970B42142A1EE00066E72 /* SocialUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -635,10 +583,6 @@
 						CreatedOnToolsVersion = 10.0;
 					};
 					9A8970A82142A1EE00066E72 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = 9A8970942142A1EE00066E72;
-					};
-					9A8970B32142A1EE00066E72 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = 9A8970942142A1EE00066E72;
 					};
@@ -659,7 +603,6 @@
 			targets = (
 				9A8970942142A1EE00066E72 /* Social */,
 				9A8970A82142A1EE00066E72 /* SocialTests */,
-				9A8970B32142A1EE00066E72 /* SocialUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -687,13 +630,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A8970B22142A1EE00066E72 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -709,24 +645,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SocialTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		24B5A8738C86DB0C7EA80BCF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SocialUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -854,14 +772,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A8970B02142A1EE00066E72 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A8970B92142A1EE00066E72 /* SocialUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -869,11 +779,6 @@
 			isa = PBXTargetDependency;
 			target = 9A8970942142A1EE00066E72 /* Social */;
 			targetProxy = 9A8970AA2142A1EE00066E72 /* PBXContainerItemProxy */;
-		};
-		9A8970B62142A1EE00066E72 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9A8970942142A1EE00066E72 /* Social */;
-			targetProxy = 9A8970B52142A1EE00066E72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1014,7 +919,10 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1031,7 +939,10 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = Social/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1049,7 +960,11 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1068,48 +983,16 @@
 				DEVELOPMENT_TEAM = 8J3TTY737M;
 				INFOPLIST_FILE = SocialTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Social.app/Social";
-			};
-			name = Release;
-		};
-		9A8970C42142A1EE00066E72 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF4A2CE1BEED21767985ADF3 /* Pods-SocialUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8J3TTY737M;
-				INFOPLIST_FILE = SocialUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Social;
-			};
-			name = Debug;
-		};
-		9A8970C52142A1EE00066E72 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDC576CBF6694E9042D97ADF /* Pods-SocialUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8J3TTY737M;
-				INFOPLIST_FILE = SocialUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.jonnothebonno.SocialUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Social;
 			};
 			name = Release;
 		};
@@ -1139,15 +1022,6 @@
 			buildConfigurations = (
 				9A8970C12142A1EE00066E72 /* Debug */,
 				9A8970C22142A1EE00066E72 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9A8970C32142A1EE00066E72 /* Build configuration list for PBXNativeTarget "SocialUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9A8970C42142A1EE00066E72 /* Debug */,
-				9A8970C52142A1EE00066E72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
