@@ -11,7 +11,12 @@ It features a minimal set of requirements that allow the following:
 
 Social also includes a minimal set of frameworks, one of which I have developed called *[GyozaKit](https://cocoapods.org/pods/GyozaKit)* used for displaying messages to the user in an unobtrusive way.
 
-### Testing
+## Running
+
+To run simply `pod install` and then open the `Social.xcworkspace`
+
+## Testing
+
 I developed this using the new XCode 10 build system so to run the tests you should have XCode 10 and an iOS 12 simulator (device).
 
 ```bash
